@@ -61,7 +61,6 @@
                             <a href="../../product/hyper-responsive-admin-dashboard-template/index.htm" target="_blank" class="btn btn-sm btn-light btn-rounded d-none d-lg-inline-flex">
                                 <i class="mdi mdi-github me-1"></i> Star
                             </a>
-                            {{-- <a href="" class="text-white fa fa-lock me-3"> login</a> --}}
                             <button class="btn btn-sm btn-light btn-rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                                 aria-controls="offcanvasRight">
                                 <i class="fa fa-user-lock me-1"></i> login
@@ -78,7 +77,6 @@
                                         <div class="card-body p-2">
                                             <div class="list-group list-group-flush my-2">
                                                 <a href="{{ route('admin.login') }}" target="_blank" class="list-group-item list-group-item-action border-0"><i class='icofont icofont-teacher me-1'></i> Admin login</a>
-                                                <a href="javascript:void(0);" class="list-group-item list-group-item-action border-0"><i class='uil-books me-1'></i> Librarian login</a>
                                                 <a href="{{ route('student.login') }}" target="_blank" class="list-group-item list-group-item-action border-0"><i class='icofont icofont-group-students me-1'></i> Student login</a>
                                             </div>
                                         </div>
