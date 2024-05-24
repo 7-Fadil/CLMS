@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>{{ config('app.name', 'LMS') }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+        <meta content="Coderthemes" name="author">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
+
+        <!-- App css -->
+        <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style">
+        <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style">
+        {{-- font-awesome link --}}
+        <link rel="stylesheet" href="{{ asset('assets/fontawesome-free/css/all.min.css') }}">
+        <!-- ico font -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/icofont/css/icofont.css') }}">
+
+    </head>
+
+    <body class="loading" data-layout-config='{"darkMode":false}'>
+
+        <!-- NAVBAR START -->
+        <nav class="navbar navbar-expand-lg py-lg-3 navbar-dark">
+            <div class="container">
+
+                <!-- logo -->
+                <a href="index.html" class="navbar-brand me-lg-5">
+                    <img src="{{ asset('assets/images/favicon.png') }}" alt="" class="logo-dark" height="58">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+
+                <!-- menus -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                    <!-- left menu -->
+                    <ul class="navbar-nav me-auto align-items-center">
+                        <li class="nav-item mx-lg-1">
+                            <a class="nav-link active" href="">Home</a>
+                        </li>
+                        <li class="nav-item mx-lg-1">
+                            <a class="nav-link" href="">Features</a>
+                        </li>
+                        <li class="nav-item mx-lg-1">
+                            <a class="nav-link" href="">FAQs</a>
+                        </li>
+                        <li class="nav-item mx-lg-1">
+                            <a class="nav-link" href="">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- right menu -->
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item me-0">
+                            <a href="../../product/hyper-responsive-admin-dashboard-template/index.htm" target="_blank" class="btn btn-sm btn-light btn-rounded d-none d-lg-inline-flex">
+                                <i class="mdi mdi-github me-1"></i> Star
+                            </a>
+                            {{-- <a href="" class="text-white fa fa-lock me-3"> login</a> --}}
+                            <button class="btn btn-sm btn-light btn-rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">
+                                <i class="fa fa-user-lock me-1"></i> login
+                            </button>
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header">
+                                    <h5 id="offcanvasRightLabel"><img src="{{ asset('assets/images/favicon.png') }}" alt="" height="30"> FUKashere E-LIBRARY</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+
+                                    <!-- authentication account -->
+                                    <div class="card shadow">
+                                        <div class="card-body p-2">
+                                            <div class="list-group list-group-flush my-2">
+                                                <a href="{{ route('admin.login') }}" target="_blank" class="list-group-item list-group-item-action border-0"><i class='icofont icofont-teacher me-1'></i> Admin login</a>
+                                                <a href="javascript:void(0);" class="list-group-item list-group-item-action border-0"><i class='uil-books me-1'></i> Librarian login</a>
+                                                <a href="{{ route('student.login') }}" target="_blank" class="list-group-item list-group-item-action border-0"><i class='icofont icofont-group-students me-1'></i> Student login</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end authentication account -->
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- NAVBAR END -->
+
+        <!-- START HERO -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-5">
+                        <div class="mt-md-4">
+                            <div>
+                                <span class="badge bg-danger rounded-pill">New</span>
+                                <span class="text-white-50 ms-1">Welcome to Federal University Of Kashere Gombe E-LIBRARY</span>
+                            </div>
+                            <h2 class="text-white fw-normal mb-4 mt-3 hero-title">
+                                Start <strong>Education</strong> With Our School
+                            </h2>
+
+                            <p class="mb-4 font-16 text-white-50">
+                                The Federal University, Kashere (FUKASHERE) is a Nigerian university and is located in Kashere, Gombe State.Federal University, Kashere has been officially accredited and/or recognized by the National Universities Commission (NUC), Nigeria.
+                                This camp was design for hight school student who are considering a career in education.Come explore your interest with us!
+                            </p>
+
+                            <p class="mb-4 font-16 text-white-50">
+                                Join us in the College of Education on the FUK Campus for 5 day, 4 night camp to explore innovative teaching methods, advance education technology, and global learning.
+                            </p>
+
+                            <a href="" target="_blank" class="btn btn-success">Preview <i class="mdi mdi-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2">
+                        <div class="text-md-end mt-3 mt-md-0">
+                            <img src="{{ asset('assets/images/startup.svg') }}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END HERO -->
+
+        <!-- START FEATURES 2 -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <h1 class="mt-0"><i class="mdi mdi-heart-multiple-outline"></i></h1>
+                            <h3>Features you'll <span class="text-danger">love</span></h3>
+                            <p class="text-muted mt-2">Hyper comes with next generation ui design and have multiple benefits
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 py-5 align-items-center">
+                    <div class="col-lg-5">
+                        <img src="{{ asset('assets/images/features-1.svg') }}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <h3 class="fw-normal">What We Offer</h3>
+                        <p class="text-muted mt-3">
+                            Online learning provides students with the flexibility to update their skills, discover ... You probably have a lot of questions about signing up for an online course. Online learning provides students with the flexibility to update their skills, discover a new talent or chart a career path at their convenience. Our virtual classrooms are open 24 hours a day, seven days a week.
+                        </p>
+
+                        <div class="mt-4">
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Projects & Tasks</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Ecommerce Application Pages</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Profile, pricing, invoice</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Login, signup, forget password</p>
+                        </div>
+
+                        <a href="" class="btn btn-primary btn-rounded mt-3">Read More <i class="mdi mdi-arrow-right ms-1"></i></a>
+
+                    </div>
+                </div>
+
+                <div class="row pb-3 pt-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h3 class="fw-normal">Simply beautiful design</h3>
+                        <p class="text-muted mt-3">The simplest and fastest way to build dashboard or admin panel. Hyper is built using the latest tech and tools and provide an easy way to customize anything, including an overall color schemes, layout, etc.</p>
+
+                        <div class="mt-4">
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-success"></i> Built with latest Bootstrap</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-success"></i> Extensive use of SCSS variables</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-success"></i> Well documented and structured code</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-success"></i> Detailed Documentation</p>
+                        </div>
+
+                        <a href="" class="btn btn-success btn-rounded mt-3">Read More <i class="mdi mdi-arrow-right ms-1"></i></a>
+
+                    </div>
+                    <div class="col-lg-5 offset-lg-1">
+                        <img src="{{ asset('assets/images/features-2.svg') }}" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- END FEATURES 2 -->
+
+
+        <!-- START CONTACT -->
+        <section class="py-5 bg-light-lighten border-top border-bottom border-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <h3>Get In <span class="text-primary">Touch</span></h3>
+                            <p class="text-muted mt-2">Please fill out the following form and we will get back to you shortly. For more
+                                <br>information please contact us.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-3">
+                    <div class="col-md-4">
+                        <p class="text-muted"><span class="fw-bold">Customer Support:</span><br> <span class="d-block mt-1">+234 8118870934</span></p>
+                        <p class="text-muted mt-4"><span class="fw-bold">Email Address:</span><br> <span class="d-block mt-1">7.fadil@gmail.com</span></p>
+                        <p class="text-muted mt-4"><span class="fw-bold">Office Address:</span><br> <span class="d-block mt-1">4461 Cedar Street Moro, AR 72368</span></p>
+                        <p class="text-muted mt-4"><span class="fw-bold">Office Time:</span><br> <span class="d-block mt-1">9:00AM To 6:00PM</span></p>
+                    </div>
+
+                    <div class="col-md-8">
+                        <form>
+                            <div class="row mt-4">
+                                <div class="col-lg-6">
+                                    <div class="mb-2">
+                                        <label for="fullname" class="form-label">Your Name</label>
+                                        <input class="form-control form-control-light" type="text" id="fullname" placeholder="Name...">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-2">
+                                        <label for="emailaddress" class="form-label">Your Email</label>
+                                        <input class="form-control form-control-light" type="email" required="" id="emailaddress" placeholder="Enter you email...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-1">
+                                <div class="col-lg-12">
+                                    <div class="mb-2">
+                                        <label for="subject" class="form-label">Your Subject</label>
+                                        <input class="form-control form-control-light" type="text" id="subject" placeholder="Enter subject...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-1">
+                                <div class="col-lg-12">
+                                    <div class="mb-2">
+                                        <label for="comments" class="form-label">Message</label>
+                                        <textarea id="comments" rows="4" class="form-control form-control-light" placeholder="Type your message here..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="col-12 text-end">
+                                    <button class="btn btn-primary">Send a Message <i class="mdi mdi-telegram ms-1"></i> </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END CONTACT -->
+
+        <!-- START FOOTER -->
+        <footer class="bg-dark py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{{ asset('assets/images/favicon.png') }}" alt="" class="logo-dark" height="68">
+                        <p class="text-muted mt-4">Federal University Of Kashere makes it easier to build better websites with
+                            <br> great speed. Save hundreds of hours of design
+                            <br> and development by using it.</p>
+
+                        <ul class="social-list list-inline mt-3">
+                            <li class="list-inline-item text-center">
+                                <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item text-center">
+                                <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
+                            </li>
+                            <li class="list-inline-item text-center">
+                                <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item text-center">
+                                <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-2 mt-3 mt-lg-0">
+                        <h5 class="text-light">Company</h5>
+
+                        <ul class="list-unstyled ps-0 mb-0 mt-3">
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">About Us</a></li>
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Documentation</a></li>
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Blog</a></li>
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Affiliate Program</a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-2 mt-3 mt-lg-0">
+                        <h5 class="text-light">Apps</h5>
+
+                        <ul class="list-unstyled ps-0 mb-0 mt-3">
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Ecommerce Pages</a></li>
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Email</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 mt-3 mt-lg-0">
+                        <h5 class="text-light">Discover</h5>
+
+                        <ul class="list-unstyled ps-0 mb-0 mt-3">
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Help Center</a></li>
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Our Products</a></li>
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="mt-5">
+                            <p class="text-muted mt-2 text-center">
+                                <script>document.write(new Date().getFullYear())</script> Made with <b>&#10084;</b> by fadil.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+
+        <!-- bundle -->
+        <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
+        <script src="{{ asset('assets/js/app.min.js') }}"></script>
+
+    </body>
+
+</html>
