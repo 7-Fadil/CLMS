@@ -64,7 +64,7 @@
 
                         <!-- Footer-->
                         <footer class="footer footer-alt">
-                            <p class="text-muted">Made with <b>&#10084;</b> by fadil.</p>
+                            <p class="text-muted">Made with <b class="text-danger">&#10084;</b> by fadil.</p>
                         </footer>
 
                     </div> <!-- end .card-body -->

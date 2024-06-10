@@ -98,7 +98,7 @@
                                             @method('PUT')
                                             <div class="mb-3">
                                                 <label for="simpleinput" class="form-label">Department</label>
-                                                <input type="text" name="department" value="{{ $course->couseOfStudy->department_name }}" class="form-control @error('department')
+                                                <input type="text" name="department" value="{{ $course->couseOfStudy->department_name ?? 'null' }}" class="form-control @error('department')
                                                     is-invalid
                                                 @enderror" value="" readonly>
                                             </div>
