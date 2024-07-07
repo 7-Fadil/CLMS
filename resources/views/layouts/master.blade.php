@@ -387,6 +387,13 @@
                         </li>
 
                         <li class="side-nav-item">
+                            <a href="#" class="side-nav-link">
+                                <i class="fas fa-book"></i>
+                                <span> Books </span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
                                 <i class="uil-copy-alt"></i>
                                 <span> Staffs </span>
@@ -399,6 +406,66 @@
                                     </li>
                                     <li>
                                         <a href="#">Manage staff</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#accessControl" aria-expanded="false" aria-controls="accessControl" class="side-nav-link">
+                                <i class="fas fa-file-alt"></i>
+                                <span> Report </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="accessControl">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="#"><i class="fas fa-user-lock"></i> Student</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-user-cog"></i> Books</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#accessControl" aria-expanded="false" aria-controls="accessControl" class="side-nav-link">
+                                <i class="fas fa-key"></i>
+                                <span> Access control </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="accessControl">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="#"><i class="fas fa-user-lock"></i> User management(Admin)</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-user-cog"></i> User signature</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-dot-circle"></i> Role</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-lock"></i> Approval setup</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#accessControl" aria-expanded="false" aria-controls="accessControl" class="side-nav-link">
+                                <i class="fas fa-fire-alt"></i>
+                                <span> Approval </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="accessControl">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="#"><i class="fas fa-new"></i> Fresh</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-user-cog"></i> Renewal</a>
                                     </li>
                                 </ul>
                             </div>
@@ -417,16 +484,19 @@
                                         <a href="{{ route('profile') }}"><i class="fas fa-user-cog"></i> User Profile</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('add.year') }}"><i class="icofont icofont-ui-calendar"></i> Add year </a>
+                                        <a href="{{ route('add.year') }}"><i class="fas fa-calendar"></i> Add Session </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('create.curriculum') }}"><i class="icofont icofont-link-alt"></i> Curriculum</a>
+                                        <a href="{{ route('create.curriculum') }}"><i class="fas fa-link"></i> Curriculum</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('create.courses') }}"><i class="icofont icofont-read-book-alt"></i> Course of study</a>
+                                        <a href="{{ route('create.courses') }}"><i class="fas fa-book"></i> Course of study</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('create.department') }}"><i class="icofont icofont-list"></i> Department</a>
+                                        <a href="{{ route('create.department') }}"><i class="fas fa-list"></i> Department</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-bell"></i> Notification</a>
                                     </li>
                                 </ul>
                             </div>
@@ -452,22 +522,6 @@
                     <!-- Topbar Start -->
                     <div class="navbar-custom">
                         <ul class="list-unstyled topbar-menu float-end mb-0">
-                            <li class="dropdown notification-list d-lg-none">
-                                <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <i class="dripicons-search noti-icon"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
-                                    <form class="p-3">
-                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                                    </form>
-                                </div>
-                            </li>
-
-                            <li class="notification-list">
-                                <a class="nav-link end-bar-toggle" href="javascript: void(0);">
-                                    <i class="dripicons-gear noti-icon"></i>
-                                </a>
-                            </li>
 
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -476,7 +530,8 @@
                                     </span>
                                     <span>
                                         <span class="account-user-name">{{ Auth::guard('admin')->user()->full_name }}</span>
-                                        <span class="account-position">Active</span>
+                                        {{-- <span class="account-position">Active</span> --}}
+                                        <span class="badge bg-success">Active</span>
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -493,23 +548,11 @@
 
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="mdi mdi-account-edit me-1"></i>
-                                        <span>Settings</span>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="mdi mdi-lifebuoy me-1"></i>
-                                        <span>Support</span>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="mdi mdi-lock-outline me-1"></i>
                                         <span>Lock Screen</span>
                                     </a>
                                     <a href="{{ route('admin.logout') }}" class="dropdown-item notify-item">
-                                        <i class="mdi mdi-logout me-1"></i>
+                                        <i class="mdi mdi-power me-1"></i>
                                         <span>Logout</span>
                                     </a>
                                 </div>
@@ -555,94 +598,7 @@
         </div>
         <!-- END wrapper -->
 
-        <!-- Right Sidebar -->
-        <div class="end-bar">
 
-            <div class="rightbar-title">
-                <a href="javascript:void(0);" class="end-bar-toggle float-end">
-                    <i class="dripicons-cross noti-icon"></i>
-                </a>
-                <h5 class="m-0">Settings</h5>
-            </div>
-
-            <div class="rightbar-content h-100" data-simplebar>
-
-                <div class="p-3">
-                    <div class="alert alert-warning" role="alert">
-                        <strong>Customize </strong> the overall color scheme, sidebar menu, etc.
-                    </div>
-
-                    <!-- Settings -->
-                    <h5 class="mt-3">Color Scheme</h5>
-                    <hr class="mt-1" />
-
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light" id="light-mode-check" checked>
-                        <label class="form-check-label" for="light-mode-check">Light Mode</label>
-                    </div>
-
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
-                        <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
-                    </div>
-
-
-                    <!-- Width -->
-                    <h5 class="mt-4">Width</h5>
-                    <hr class="mt-1" />
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="width" value="fluid" id="fluid-check" checked>
-                        <label class="form-check-label" for="fluid-check">Fluid</label>
-                    </div>
-
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
-                        <label class="form-check-label" for="boxed-check">Boxed</label>
-                    </div>
-
-
-                    <!-- Left Sidebar-->
-                    <h5 class="mt-4">Left Sidebar</h5>
-                    <hr class="mt-1" />
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="theme" value="default" id="default-check">
-                        <label class="form-check-label" for="default-check">Default</label>
-                    </div>
-
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="theme" value="light" id="light-check" checked>
-                        <label class="form-check-label" for="light-check">Light</label>
-                    </div>
-
-                    <div class="form-check form-switch mb-3">
-                        <input class="form-check-input" type="checkbox" name="theme" value="dark" id="dark-check">
-                        <label class="form-check-label" for="dark-check">Dark</label>
-                    </div>
-
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="compact" value="fixed" id="fixed-check" checked>
-                        <label class="form-check-label" for="fixed-check">Fixed</label>
-                    </div>
-
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="compact" value="condensed" id="condensed-check">
-                        <label class="form-check-label" for="condensed-check">Condensed</label>
-                    </div>
-
-                    <div class="form-check form-switch mb-1">
-                        <input class="form-check-input" type="checkbox" name="compact" value="scrollable" id="scrollable-check">
-                        <label class="form-check-label" for="scrollable-check">Scrollable</label>
-                    </div>
-
-                    <div class="d-grid mt-4">
-                        <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
-
-                        <span>Made with <label class="text-danger">&#10083</label> by fadil</span>
-                    </div>
-                </div> <!-- end padding-->
-
-            </div>
-        </div>
 
         <div class="rightbar-overlay"></div>
         <!-- /End-bar -->

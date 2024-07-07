@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @section('content')
     <!-- Center modal -->
-    <button id="addCurriculum" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#centermodal">Add curriculum</button>
+    <button id="addCurriculum" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#centermodal">Add curriculum <i class="fas fa-plus"></i></button>
+    <a href="" class="btn btn-outline-info">Bulk upload <i class="fas fa-cloud"></i></a>
     <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -72,7 +73,7 @@
     </div><!-- /.modal -->
 
     <div class="mt-3">
-        <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+        <table id="alternative-page-datatable" class="table dt-responsive nowrap w-100">
             <thead>
                 <tr>
                     <th>S/N</th>
@@ -80,6 +81,8 @@
                     <th>Course title</th>
                     <th>Course code</th>
                     <th>Status</th>
+                    <th>Level</th>
+                    <th>Session</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -98,7 +101,8 @@
                             @endif
                         </td>
                         <td>
-                            <button class="btn btn-outline-secondary" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editmodal<?php echo $fetch->uuid ?>"><i class="icofont icofont-edit"> Edit</i></button>
+                            <span class="text-mute" type="button"  data-bs-toggle="modal" data-bs-target="#editmodal<?php echo $fetch->uuid ?>"> Edit
+                                <i class="fas fa-edit"></i></span>
                             <div class="modal fade" id="editmodal<?php echo $fetch->uuid ?>" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -162,7 +166,7 @@
 @endif
 @endsection
 {{-- <script src="{{ asset('assets/js/jquery.min.js') }}"></script> --}}
-<script>
+{{-- <script>
 
     $(document).ready(function(){
         $('#department').change(function(){
@@ -186,4 +190,4 @@
         });
         $('#test1').hide();
     });
-</script>
+</script> --}}
