@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '87964e8bc2d4b2a4e83adfd9510f9d06bbbd48d6',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'dbfa01f994d75006e1bd79afdf46fd0ee818f86a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'brian2694/laravel-toastr' => array(
-            'pretty_version' => '5.57',
-            'version' => '5.57.0.0',
-            'reference' => '1274f58564b9d845dfe82d5aca60b99b6fbb5a71',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../brian2694/laravel-toastr',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'brick/math' => array(
             'pretty_version' => '0.11.0',
             'version' => '0.11.0.0',
@@ -389,9 +380,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '87964e8bc2d4b2a4e83adfd9510f9d06bbbd48d6',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'dbfa01f994d75006e1bd79afdf46fd0ee818f86a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -991,6 +982,15 @@
             'install_path' => __DIR__ . '/../spatie/laravel-ignition',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'spatie/laravel-permission' => array(
+            'pretty_version' => '6.9.0',
+            'version' => '6.9.0.0',
+            'reference' => 'fe973a58b44380d0e8620107259b7bda22f70408',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-permission',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/console' => array(
             'pretty_version' => 'v6.3.0',
