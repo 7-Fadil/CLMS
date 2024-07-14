@@ -55,7 +55,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="#" class="side-nav-link">
+                            <a href="{{ route('create.book') }}" class="side-nav-link">
                                 <i class="fas fa-book"></i>
                                 <span> Books </span>
                             </a>
@@ -70,10 +70,10 @@
                             <div class="collapse" id="sidebarPages">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="#">Add staff</a>
+                                        <a href="#"><i class="mdi mdi-plus"></i> Add staff</a>
                                     </li>
                                     <li>
-                                        <a href="#">Manage staff</a>
+                                        <a href="#"><i class="mdi mdi-book"></i> Manage staff</a>
                                     </li>
                                 </ul>
                             </div>
@@ -88,10 +88,10 @@
                             <div class="collapse" id="report">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="#"><i class="fas fa-user-lock"></i> Student</a>
+                                        <a href="#"><i class="mdi mdi-account-details"></i> Student</a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fas fa-user-cog"></i> Books</a>
+                                        <a href="#"><i class="mdi mdi-bookmark"></i> Books</a>
                                     </li>
                                 </ul>
                             </div>
@@ -148,10 +148,10 @@
                             <div class="collapse" id="approval">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="#"><i class="fas fa-new"></i> Fresh</a>
+                                        <a href="#"><i class="mdi mdi-plus-circle"></i> Fresh</a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fas fa-user-cog"></i> Renewal</a>
+                                        <a href="#"><i class="mdi mdi-card-plus-outline"></i> Renewal</a>
                                     </li>
                                 </ul>
                             </div>
@@ -169,23 +169,36 @@
                                     <li>
                                         <a href="{{ route('profile') }}"><i class="fas fa-user-cog"></i> User Profile</a>
                                     </li>
+
                                     <li>
                                         <a href="{{ route('add.year') }}"><i class="fas fa-calendar"></i> Add Session </a>
                                     </li>
                                     <li>
-                                        {{-- <a href="{{ route('create.curriculum') }}"><i class="fas fa-link"></i> Curriculum</a>
-                                    </li> --}}
+
                                     <li>
                                         <a href="{{ route('create.courses') }}"><i class="fas fa-book"></i> Course of study</a>
                                     </li>
+
                                     <li>
                                         <a href="{{ route('create.department') }}"><i class="fas fa-list"></i> Department</a>
                                     </li>
+
                                     <li>
                                         <a href="#"><i class="fas fa-bell"></i> Notification</a>
                                     </li>
+
+                                    <li>
+                                        <a href="{{ route('book.category') }}"><i class="mdi mdi-book-variant-multiple"></i> Book Category</a>
+                                    </li>
                                 </ul>
                             </div>
+                        </li>
+                        <hr>
+                        <li class="side-nav-item">
+                            <a href="{{ route('admin.logout') }}" class="side-nav-link">
+                                <i class="mdi mdi-arrow-left-bold-circle-outline"></i>
+                                <span> Logout </span>
+                            </a>
                         </li>
 
                     </ul>

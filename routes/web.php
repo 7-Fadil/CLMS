@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BooksController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\YearRegistrationController;
 
@@ -70,11 +71,20 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
         Route::get('/create/library/card', 'libraryCard')->name('library.card');
     });
     /* Main route ended */
+
     Route::controller(UserManagementController::class)->middleware('admin')->group(function(){
         /** User management route started */
         Route::get('/user/management', 'index')->name('user-management');
         /** User management route ended */
     });
+
+    /**Book main route */
+    Route::controller(BooksController::class)->middleware('admin')->group(function(){
+        Route::get('/create/book', 'index')->name('create.book');
+        // Book Category Route
+        Route::get('/book/category', 'bookCategory')->name('book.category');
+    });
+
     /** Poject route */
     Route::controller(ProjectController::class)->middleware('admin')->group(function(){
         Route::get('/add/project', 'create')->name('project.create');

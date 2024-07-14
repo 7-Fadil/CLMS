@@ -192,7 +192,7 @@
                     <div class="col-md-4">
                         <p class="text-muted"><span class="fw-bold">Customer Support:</span><br> <span class="d-block mt-1">+234 8118870934</span></p>
                         <p class="text-muted mt-4"><span class="fw-bold">Email Address:</span><br> <span class="d-block mt-1">7.fadil@gmail.com</span></p>
-                        <p class="text-muted mt-4"><span class="fw-bold">Office Address:</span><br> <span class="d-block mt-1">Federal University Kashere</span></p>
+                        <p class="text-muted mt-4"><span class="fw-bold">Office Address:</span><br> <span class="d-block mt-1">Federal University Kashere Gombe, Gombe State.</span></p>
                     </div>
 
                     <div class="col-md-8">
@@ -263,7 +263,7 @@
                                 <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
                             </li>
                             <li class="list-inline-item text-center">
-                                <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
+                                <a href="https://github.com/7-Fadil" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
                             </li>
                         </ul>
 
@@ -276,7 +276,6 @@
                             <li class="mt-2"><a href="javascript: void(0);" class="text-muted">About Us</a></li>
                             <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Documentation</a></li>
                             <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Blog</a></li>
-                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Affiliate Program</a></li>
                         </ul>
 
                     </div>
@@ -287,6 +286,7 @@
                         <ul class="list-unstyled ps-0 mb-0 mt-3">
                             <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Ecommerce Pages</a></li>
                             <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Email</a></li>
+                            <li class="mt-2"><a href="javascript: void(0);" class="text-muted">Sms</a></li>
                         </ul>
                     </div>
 
@@ -305,7 +305,7 @@
                     <div class="col-lg-12">
                         <div class="mt-5">
                             <p class="text-muted mt-2 text-center">
-                                <script>document.write(new Date().getFullYear())</script> Made with <b>&#10084;</b> by fadil.
+                                <script>document.write(new Date().getFullYear())</script> Made with <b>&#10084;</b> by <a href="https://github.com/7-Fadil">fadil.</a>
                             </p>
                         </div>
                     </div>

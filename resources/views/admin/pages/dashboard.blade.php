@@ -122,10 +122,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="my-2 my-sm-0">
-                                <i class="mdi mdi-trending-down text-danger mt-3 h3"></i>
-                            <h3 class="fw-normal">
-                                <span>10%</span>
-                            </h3>
+                            <i class="mdi mdi-trending-down text-danger mt-3 h3"></i>
                             <p class="text-muted mb-0"> Behind</p>
                         </div>
 
@@ -141,120 +138,75 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                    <h4 class="header-title">Messages</h4>
-                    <div class="dropdown">
-                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="mdi mdi-dots-vertical"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">Weekly Report</a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">Monthly Report</a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">Settings</a>
-                        </div>
-                    </div>
+                    <h1 class="header-title">Notification(s) <i class="mdi mdi-bell"></i></h1>
                 </div>
 
-                <p><b>107</b> Tasks completed out of 195</p>
-
                 <div class="table-responsive">
-                    <table class="table table-centered table-nowrap table-hover mb-0">
+                    <table id="alternative-page-datatable" class="table dt-responsive nowrap w-100">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Name</th>
+                                <th>Faculty</th>
+                                <th>Department</th>
+                                <th>Level</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
                         <tbody>
                             <tr>
+                                <td>1</td>
+                                <td>Salihu Ismail Jibril</td>
+                                <td>Science</td>
+                                <td>Computer Science</td>
+                                <td>400</td>
                                 <td>
-                                    <h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Coffee detail page - Main Page</a></h5>
-                                    <span class="text-muted font-13">Due in 3 days</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Status</span> <br/>
-                                    <span class="badge badge-warning-lighten">In-progress</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Assigned to</span>
-                                    <h5 class="font-14 mt-1 fw-normal">Logan R. Cohn</h5>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Total time spend</span>
-                                    <h5 class="font-14 mt-1 fw-normal">3h 20min</h5>
-                                </td>
-                                <td class="table-action" style="width: 90px;">
+                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                     <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
                                     <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                 </td>
                             </tr>
                             <tr>
+                                <td>2</td>
+                                <td>Abdulhameed Yerima Adamu</td>
+                                <td>Science</td>
+                                <td>Computer Science</td>
+                                <td>400</td>
                                 <td>
-                                    <h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Drinking bottle graphics</a></h5>
-                                    <span class="text-muted font-13">Due in 27 days</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Status</span> <br/>
-                                    <span class="badge badge-danger-lighten">Outdated</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Assigned to</span>
-                                    <h5 class="font-14 mt-1 fw-normal">Jerry F. Powell</h5>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Total time spend</span>
-                                    <h5 class="font-14 mt-1 fw-normal">12h 21min</h5>
-                                </td>
-                                <td class="table-action" style="width: 90px;">
-                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">App design and development</a></h5>
-                                    <span class="text-muted font-13">Due in 7 days</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Status</span> <br/>
-                                    <span class="badge badge-success-lighten">Completed</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Assigned to</span>
-                                    <h5 class="font-14 mt-1 fw-normal">Scot M. Smith</h5>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Total time spend</span>
-                                    <h5 class="font-14 mt-1 fw-normal">78h 05min</h5>
-                                </td>
-                                <td class="table-action" style="width: 90px;">
-                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Poster illustation design</a></h5>
-                                    <span class="text-muted font-13">Due in 5 days</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Status</span> <br/>
-                                    <span class="badge badge-warning-lighten">In-progress</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Assigned to</span>
-                                    <h5 class="font-14 mt-1 fw-normal">John P. Ritter</h5>
-                                </td>
-                                <td>
-                                    <span class="text-muted font-13">Total time spend</span>
-                                    <h5 class="font-14 mt-1 fw-normal">26h 58min</h5>
-                                </td>
-                                <td class="table-action" style="width: 90px;">
+                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                     <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
                                     <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                 </td>
                             </tr>
 
+                            <tr>
+                                <td>3</td>
+                                <td>Bilkisu Muhammad</td>
+                                <td>Science</td>
+                                <td>Biological Science</td>
+                                <td>200</td>
+                                <td>
+                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>Salma Dauda</td>
+                                <td>Science</td>
+                                <td>Computer Science</td>
+                                <td>200</td>
+                                <td>
+                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                </td>
+                            </tr>
                         </tbody>
-                    </table>
+                        </table>
                 </div> <!-- end table-responsive-->
 
             </div> <!-- end card body-->
