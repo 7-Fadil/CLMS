@@ -8,6 +8,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\YearRegistrationController;
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,11 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
         Route::get('/create/library/card', 'libraryCard')->name('library.card');
     });
     /* Main route ended */
+    Route::controller(UserManagementController::class)->middleware('admin')->group(function(){
+        /** User management route started */
+        Route::get('/user/management', 'index')->name('user-management');
+        /** User management route ended */
+    });
     /** Poject route */
     Route::controller(ProjectController::class)->middleware('admin')->group(function(){
         Route::get('/add/project', 'create')->name('project.create');

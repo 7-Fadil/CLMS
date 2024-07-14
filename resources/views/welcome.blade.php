@@ -149,38 +149,24 @@
                     <div class="col-lg-6 offset-lg-1">
                         <h3 class="fw-normal">What We Offer</h3>
                         <p class="text-muted mt-3">
-                            Online learning provides students with the flexibility to update their skills, discover ... You probably have a lot of questions about signing up for an online course. Online learning provides students with the flexibility to update their skills, discover a new talent or chart a career path at their convenience. Our virtual classrooms are open 24 hours a day, seven days a week.
+                            We offer a comprehensive online library management system design to support your acadamic success. Our platform provide instant access to a vast collection of e-books, articles, research papers, and digital resources.
+                        </p>
+                        <p class="text-muted mt-3">
+                            Our goal is to provide a flexible and inclusive learning enviroment that support your acadamic excellence, and helps you achieve success in your studey beyond.
                         </p>
 
                         <div class="mt-4">
-                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Projects & Tasks</p>
-                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Ecommerce Application Pages</p>
-                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Profile, pricing, invoice</p>
-                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Login, signup, forget password</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Mobile-friendly access, allowing you to learn anywhere, anytime.</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Instant access to a vast collection of e-books, articles, research paper, and digital resources. </p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Collaboration spaces for group for group project and research.</p>
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Accessibility features, including a question and answers bank from previous exams, available for student to review.</p>
+                            <p class="test-muted"><i class="mdi mdi-circle-medium text-primary"></i>
+                            and much more..!
+                            </p>
                         </div>
 
                         <a href="" class="btn btn-primary btn-rounded mt-3">Read More <i class="mdi mdi-arrow-right ms-1"></i></a>
 
-                    </div>
-                </div>
-
-                <div class="row pb-3 pt-5 align-items-center">
-                    <div class="col-lg-6">
-                        <h3 class="fw-normal">Simply beautiful design</h3>
-                        <p class="text-muted mt-3">The simplest and fastest way to build dashboard or admin panel. Hyper is built using the latest tech and tools and provide an easy way to customize anything, including an overall color schemes, layout, etc.</p>
-
-                        <div class="mt-4">
-                            <p class="text-muted"><i class="mdi mdi-circle-medium text-success"></i> Built with latest Bootstrap</p>
-                            <p class="text-muted"><i class="mdi mdi-circle-medium text-success"></i> Extensive use of SCSS variables</p>
-                            <p class="text-muted"><i class="mdi mdi-circle-medium text-success"></i> Well documented and structured code</p>
-                            <p class="text-muted"><i class="mdi mdi-circle-medium text-success"></i> Detailed Documentation</p>
-                        </div>
-
-                        <a href="" class="btn btn-success btn-rounded mt-3">Read More <i class="mdi mdi-arrow-right ms-1"></i></a>
-
-                    </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <img src="{{ asset('assets/images/features-2.svg') }}" class="img-fluid" alt="">
                     </div>
                 </div>
 
@@ -206,8 +192,7 @@
                     <div class="col-md-4">
                         <p class="text-muted"><span class="fw-bold">Customer Support:</span><br> <span class="d-block mt-1">+234 8118870934</span></p>
                         <p class="text-muted mt-4"><span class="fw-bold">Email Address:</span><br> <span class="d-block mt-1">7.fadil@gmail.com</span></p>
-                        <p class="text-muted mt-4"><span class="fw-bold">Office Address:</span><br> <span class="d-block mt-1">4461 Cedar Street Moro, AR 72368</span></p>
-                        <p class="text-muted mt-4"><span class="fw-bold">Office Time:</span><br> <span class="d-block mt-1">9:00AM To 6:00PM</span></p>
+                        <p class="text-muted mt-4"><span class="fw-bold">Office Address:</span><br> <span class="d-block mt-1">Federal University Kashere</span></p>
                     </div>
 
                     <div class="col-md-8">
