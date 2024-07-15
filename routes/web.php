@@ -83,6 +83,7 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
         Route::get('/create/book', 'index')->name('create.book');
         // Book Category Route
         Route::get('/book/category', 'bookCategory')->name('book.category');
+        Route::post('/book/category', 'bookCategoryPost')->name('save.bookCategory');
     });
 
     /** Poject route */
