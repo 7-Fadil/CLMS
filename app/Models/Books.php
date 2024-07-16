@@ -9,5 +9,7 @@ class Books extends Model
 {
     use HasFactory;
 
-    
+    protected $fillable = [
+        'uuid',
+    ];
 }

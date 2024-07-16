@@ -89,7 +89,7 @@ class BooksController extends Controller
     {
         //
     }//end route
-    
+
     public function bookCategory(){
         $allBookCategory = BookCategory::all();
         return view('admin.pages.BookCategory.index', [
