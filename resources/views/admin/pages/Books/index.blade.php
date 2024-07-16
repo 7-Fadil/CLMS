@@ -61,7 +61,7 @@
                     <div class="mt-2">
                         <label for="simpleinput" class="form-label">Category:</label>
                         <select class="form-select" name="booksCategory">
-                            <option hidden>-- select category --</option>
+                            {{-- <option hidden>-- select category --</option> --}}
                             @foreach ($bookCategorys as $bookCategory)
                                 <option value="{{ $bookCategory->uuid }}">{{ $bookCategory->book_category_name }}</option>
                             @endforeach

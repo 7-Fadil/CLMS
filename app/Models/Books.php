@@ -11,5 +11,6 @@ class Books extends Model
 
     protected $fillable = [
         'uuid',
+        'bookCategory_uuid',
     ];
 }
