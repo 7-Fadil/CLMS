@@ -80,10 +80,17 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
 
     /**Book main route */
     Route::controller(BooksController::class)->middleware('admin')->group(function(){
+
+        /** Books Route */
         Route::get('/create/book', 'index')->name('create.book');
-        // Book Category Route
+        Route::post('/books', 'store')->name('save.books');
+        /** Books Route ended */
+
+        /** Book Category Route */
         Route::get('/book/category', 'bookCategory')->name('book.category');
         Route::post('/book/category', 'bookCategoryPost')->name('save.bookCategory');
+        /** Book category route ended */
+
     });
 
     /** Poject route */

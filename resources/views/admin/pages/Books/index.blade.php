@@ -10,7 +10,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST">
+                <form action="{{ route('save.books') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <label for="simpleinput" class="form-label">Book name:</label>
                     <input type="text" id="simpleinput" name="bookName" class="form-control @error('bookName')
@@ -36,7 +36,7 @@
 
                     <div class="mt-2">
                         <label for="simpleinput" class="form-label">Author name:</label>
-                        <input type="text" id="simpleinput" name="authorName" class="form-control @error('isbnNumber')
+                        <input type="text" id="simpleinput" name="authorName" class="form-control @error('authorName')
                             is-invalid
                         @enderror">
                         @error('authorName')
@@ -48,10 +48,10 @@
 
                     <div class="mt-2">
                         <label for="simpleinput" class="form-label">Book image:</label>
-                        <input type="file" id="example-fileinput"" name="isbnNumber" class="form-control @error('isbnNumber')
+                        <input type="file" id="example-fileinput"" name="bookImg" class="form-control @error('isbnNumber')
                             is-invalid
                         @enderror">
-                        @error('isbnNumber')
+                        @error('bookImg')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>
@@ -60,20 +60,11 @@
 
                     <div class="mt-2">
                         <label for="simpleinput" class="form-label">Category:</label>
-                        <select class="form-select @error('department')
-                        is-invalid
-                        @enderror" name="category" />
+                        <select class="form-select" name="booksCategory">
                             <option hidden>-- select category --</option>
-                            <option value="anthropology">Anthropology</option>
-                            <option value="business">Business</option>
-                            <option value="chemistry">Chemistry</option>
-                            <option value="computer-scince">Computer Science</option>
-                            <option value="engineering">Engineering</option>
-                            <option value="english">English</option>
-                            <option value="history">History</option>
-                            <option value="mathematics">Mathematics</option>
-                            <option value="philosopy">Philosopy</option>
-                            <option value="sociology">Sociology</option>
+                            @foreach ($bookCategorys as $bookCategory)
+                                <option value="{{ $bookCategory->uuid }}">{{ $bookCategory->book_category_name }}</option>
+                            @endforeach
                         </select>
                     </div>
 
