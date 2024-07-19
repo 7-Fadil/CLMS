@@ -12,5 +12,9 @@ class Books extends Model
     protected $fillable = [
         'uuid',
         'bookCategory_uuid',
+        'book_name',
+        'isbn_number',
+        'author',
+        'book_img'
     ];
 }

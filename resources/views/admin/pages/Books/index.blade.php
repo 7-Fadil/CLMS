@@ -58,14 +58,22 @@
                         @enderror
                     </div>
 
-                    <div class="mt-2">
-                        <label for="simpleinput" class="form-label">Category:</label>
-                        <select class="form-select" name="booksCategory">
-                            {{-- <option hidden>-- select category --</option> --}}
-                            @foreach ($bookCategorys as $bookCategory)
-                                <option value="{{ $bookCategory->uuid }}">{{ $bookCategory->book_category_name }}</option>
+                    <div class="mb-3" id="test">
+                        <label for="example-select" class="form-label">Books Category:</label>
+                        <select class="form-select @error('department')
+                        is-invalid
+                        @enderror" name="booksCategory" id="department">
+                            @foreach ($bookCategorys as $booksCategory)
+                                <option hidden>-- select department --</option>
+                                <option value="{{ $booksCategory->uuid }}">{{ $booksCategory->book_category_name }}</option>
                             @endforeach
                         </select>
+                        {{-- <input type="text" name="department" hidden id=""> --}}
+                        @error('department')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <hr>
