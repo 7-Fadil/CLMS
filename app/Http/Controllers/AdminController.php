@@ -95,6 +95,7 @@ class AdminController extends Controller
     /** Method for storing courese of study */
     public function storeCourseOfStudy(StoreCourseOfStudyRequest $request)
     {
+        dd($request->department);
         $courses=CourseOfStudy::create([
             'uuid'=>Str::orderedUuid(),
             'department_uuid'=>$request->department,

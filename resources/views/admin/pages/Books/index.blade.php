@@ -58,23 +58,30 @@
                         @enderror
                     </div>
 
-                    <div class="mb-3" id="test">
-                        <label for="example-select" class="form-label">Books Category:</label>
-                        <select class="form-select @error('department')
-                        is-invalid
-                        @enderror" name="booksCategory" id="department">
-                            @foreach ($bookCategorys as $booksCategory)
-                                <option hidden>-- select department --</option>
-                                <option value="{{ $booksCategory->uuid }}">{{ $booksCategory->book_category_name }}</option>
-                            @endforeach
-                        </select>
-                        {{-- <input type="text" name="department" hidden id=""> --}}
-                        @error('department')
-                            <div class="text-danger">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
+                    {{-- <div class="mb-3">
+                        <label class="form-label">Book Category</label>
+                            <select
+                                class="form-select @error('booksCategory')
+                            is-invalid
+                            @enderror"
+                                name="booksCategory">
+                                @foreach ($bookCategorys as $bookCategory)
+                                    <option hidden>-- select Book Category --</option>
+                                    <option value="{{ $bookCategory->uuid }}">{{ $bookCategory->book_category_name }}</option>
+                                @endforeach
+                            </select>
+                            @error('booksCategory')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                    </div> --}}
+
+                    <select name="booksCategory">
+                        <option value="1">master1</option>
+                        <option value="2">master2</option>
+                        <option value="3">master3</option>
+                    </select>
 
                     <hr>
                     <button type="submit" class="btn btn-secondary">Save</button>
