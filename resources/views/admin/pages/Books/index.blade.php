@@ -58,13 +58,12 @@
                         @enderror
                     </div>
 
-                    {{-- <div class="mb-3">
+                    <div class="mb-3">
                         <label class="form-label">Book Category</label>
-                            <select
-                                class="form-select @error('booksCategory')
-                            is-invalid
-                            @enderror"
-                                name="booksCategory">
+                            <select class="form-select
+                            @error('booksCategory')
+                                is-invalid
+                            @enderror" name="booksCategory">
                                 @foreach ($bookCategorys as $bookCategory)
                                     <option hidden>-- select Book Category --</option>
                                     <option value="{{ $bookCategory->uuid }}">{{ $bookCategory->book_category_name }}</option>
@@ -75,13 +74,7 @@
                                     {{ $message }}
                                 </div>
                             @enderror
-                    </div> --}}
-
-                    <select name="booksCategory">
-                        <option value="1">master1</option>
-                        <option value="2">master2</option>
-                        <option value="3">master3</option>
-                    </select>
+                    </div>
 
                     <hr>
                     <button type="submit" class="btn btn-secondary">Save</button>
