@@ -37,16 +37,16 @@ class BooksController extends Controller
 
         $this->validate($request, [
             'bookName'=>'required',
-            'isbnNumber'=>'required|alpha_num|unique:books,isdn_number',
+            'isbnNumber'=>'required|alpha_num|unique:books,isbn_number|min:11',
             'authorName'=>'required',
-            'bookImg'=>'required'
+            'bookImg'=>'required|mimes:png,jpg'
         ]);
 
         $book = Books::create([
             'uuid' => str::orderedUuid(),
-            'bookCategoy_uuid' => $request->booksCategory,
-            'book_name' => $request->bookName,
-            'isbn_nmuber' => $request->isbnNumber,
+            'books_category_uuid' => $request->booksCategory,
+            'books_name' => $request->bookName,
+            'isbn_number' => $request->isbnNumber,
             'author' => $request->authorName,
             'book_img' => $request->bookImg ? $request->bookImg->store('public/bookImage'):null
         ]);
