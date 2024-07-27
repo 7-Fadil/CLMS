@@ -88,5 +88,22 @@ class BooksController extends Controller
     public function destroy(Books $books)
     {
         //
+    }//end method
+
+    public function bookCategory(){
+        $allBookCategory = BookCategory::all();
+        return view('admin.pages.BookCategory.index', [
+            'bookCategorys'=>$allBookCategory]
+        );
+    }//end method
+    public function bookCategoryPost(Request $request)
+    {
+        // return $request;
+        $bookCategory = BookCategory::create([
+            'uuid' => Str::orderedUuid(),
+            'book_category_name' => $request->bookCategory
+        ]);
+
+        return to_route('book.category')->with('success', 'Record successfully inseted');
     }
 }
