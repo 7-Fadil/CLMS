@@ -12,6 +12,8 @@
 
         <!-- third party css -->
         <link href="{{ asset('assets/css/vendor/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css">
+        {{-- font-awesome link --}}
+        <link rel="stylesheet" href="{{ asset('assets/fontawesome-free/css/all.min.css') }}">
         <!-- third party css end -->
 
         <!-- App css -->
@@ -53,9 +55,74 @@
                         <li class="side-nav-item">
                             <a href="{{ route('student.profile') }}" class="side-nav-link">
                                 <i class="uil-user"></i>
-                                <span> Profile </span>
+                                <span>Profile</span>
                             </a>
                         </li>
+
+                        {{-- borrowed book --}}
+                        <li class="side-nav-item">
+                            <a href="" class="side-nav-link">
+                                <i class="uil-book uil-check"></i>
+                                <span>Borrowed Books</span>
+                            </a>
+                        </li>
+
+                        {{-- overdue books --}}
+                        <li class="side-nav-item">
+                            <a href="" class="side-nav-link">
+                                <i class="uil-book-alt uil-exclamation-octagon"></i>
+                                <span>Overdue Books </span>
+                            </a>
+                        </li>
+
+                        {{-- book reservation --}}
+                        <li class="side-nav-item">
+                            <a href="" class="side-nav-link">
+                                <i class="uil-book-alt uil-clock uil-plus"></i>
+                                <span>Book Reservation</span>
+                            </a>
+                        </li>
+
+                        {{-- search catalog --}}
+                        <li class="side-nav-item">
+                            <a href="" class="side-nav-link">
+                                <i class="uil-search"></i>
+                                <span>Search Catalog</span>
+                            </a>
+                        </li>
+
+                        {{-- fines and fees --}}
+                        <li class="side-nav-item">
+                            <a href="" class="side-nav-link">
+                                <i class="uil-money-bill"></i>
+                                <span>Fines and Fees</span>
+                            </a>
+                        </li>
+
+                        {{-- Library announcement --}}
+                        <li class="side-nav-item">
+                            <a href="" class="side-nav-link">
+                                <i class="uil-newspaper"></i>
+                                <span>Library Announcement</span>
+                            </a>
+                        </li>
+
+                        {{-- Book renewal --}}
+                        <li class="side-nav-item">
+                            <a href="" class="side-nav-link">
+                                <i class="uil-book-alt uil-sync"></i>
+                                <span>Book Renewal</span>
+                            </a>
+                        </li>
+
+                        {{-- Resource guide --}}
+                        <li class="side-nav-item">
+                            <a href="" class="side-nav-link">
+                                <i class="uil-book-alt uil-compass"></i>
+                                <span>Resource Guide</span>
+                            </a>
+                        </li>
+
                     </ul>
                     <!-- End Sidebar -->
 

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('faculties', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid', 100);
-            $table -> foreignId('faculty_uuid')->unique();
-            $table->string('department_name')->unique();
-            $table->enum('is_active', [1, 0])->default(1);
+            $table -> string('uuid', 100)->unique();
+            $table -> string('faculty_name', 150)->unique();
+            $table -> string('faculty_short_code_name', 50)->nullable();
+            $table -> enum('is_active', [1,0])->default(1);
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('faculties');
     }
 };

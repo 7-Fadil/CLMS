@@ -38,18 +38,29 @@
 
                     <div id="cardCollpase1" class="collapse pt-3 show">
                         <div>
-                            <label class="form-label">Phone Number:</label>
-                            <input type="text" name="phoneNumber" class="form-control" maxlength="11" data-toggle="maxlength">
+                            <label class="form-label">Faculty:</label>
+                            <input type="text" name="faculty" class="form-control" maxlength="12" data-toggle="maxlength">
                         </div>
                     </div>
 
                     <div id="cardCollpase1" class="collapse pt-3 show">
                         <div>
-                            <label class="form-label">Date of Birth:</label>
-                            {{-- <input type="text" class="form-control" maxlength="150" data-toggle="maxlength"> --}}
+                            <label class="form-label">Department:</label>
+                            <!-- Single Select -->
+                            <select class="form-control select2" name="department" data-toggle="select2">
+                                <optgroup label="Select Department">
+                                    @foreach ($departments as $department)
+                                    <option value="{{ $department->uuid }}">{{ $department->department_name }}</option>
+                                    @endforeach
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
 
-                            <input type="text" name="dob" class="form-control" data-toggle="input-mask" data-mask-format="00/00/0000">
-                            <span class="font-13 text-muted">e.g "DD/MM/YYYY"</span>
+                    <div id="cardCollpase1" class="collapse pt-3 show">
+                        <div>
+                            <label class="form-label">Phone Number:</label>
+                            <input type="text" name="phoneNumber" class="form-control" maxlength="11" data-toggle="maxlength">
                         </div>
                     </div>
 
@@ -78,6 +89,16 @@
 
                     <div id="cardCollpase1" class="collapse pt-3 show">
                         <div>
+                            <label class="form-label">Date of Birth:</label>
+                            {{-- <input type="text" class="form-control" maxlength="150" data-toggle="maxlength"> --}}
+
+                            <input type="text" name="dob" class="form-control" data-toggle="input-mask" data-mask-format="00/00/0000">
+                            <span class="font-13 text-muted">e.g "DD/MM/YYYY"</span>
+                        </div>
+                    </div>
+
+                    <div id="cardCollpase1" class="collapse pt-3 show">
+                        <div>
                             <label class="form-label">Email Address:</label>
                             <input type="email" name="emailAddress" class="form-control" maxlength="50" data-toggle="maxlength">
                         </div>
@@ -86,27 +107,6 @@
                     <div id="cardCollpase1" class="collapse pt-3 show">
                         <label for="example-fileinput" class="form-label">Profile picture:</label>
                         <input type="file" name="profileImage" id="example-fileinput" class="form-control">
-                    </div>
-
-                    <div id="cardCollpase1" class="collapse pt-3 show">
-                        <div>
-                            <label class="form-label">Faculty:</label>
-                            <input type="text" name="faculty" class="form-control" maxlength="12" data-toggle="maxlength">
-                        </div>
-                    </div>
-
-                    <div id="cardCollpase1" class="collapse pt-3 show">
-                        <div>
-                            <label class="form-label">Department:</label>
-                            <!-- Single Select -->
-                            <select class="form-control select2" name="department" data-toggle="select2">
-                                <optgroup label="Select Department">
-                                    @foreach ($departments as $department)
-                                    <option value="{{ $department->uuid }}">{{ $department->department_name }}</option>
-                                    @endforeach
-                                </optgroup>
-                            </select>
-                        </div>
                     </div>
 
                     <div id="cardCollpase1" class="collapse pt-3 show">

@@ -36,6 +36,7 @@
         <thead>
             <tr>
                 <th>S/N</th>
+                <th>Faculty</th>
                 <th>Department</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -46,6 +47,7 @@
             @foreach ($departments as $sn => $item)
                 <tr>
                     <td>{{ $sn+1 }}</td>
+                    <td>{{ $item -> facultyName ?? null }}</td>
                     <td>{{ $item->department_name }}</td>
                     <td>
                         @if ($item->status == "1")
