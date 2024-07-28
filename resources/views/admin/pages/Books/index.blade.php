@@ -102,7 +102,6 @@
 
         <tbody>
                 @foreach ($books as $sn => $book)
-                    <img src="{{ asset('../public/'.$book->book_img) }}" alt="Book Imaagess">
                     <tr>
                         <td>{{ $sn+1 }}</td>
                         <td>{{ $book->books_name }}</td>
