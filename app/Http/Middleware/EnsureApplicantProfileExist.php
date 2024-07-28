@@ -5,10 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 use Symfony\Component\HttpFoundation\Response;
 
-class Student
+class EnsureApplicantProfileExist
 {
     /**
      * Handle an incoming request.
@@ -18,9 +17,7 @@ class Student
     public function handle(Request $request, Closure $next): Response
     {
 
-        if (!Auth::guard('student')->check()) {
-            return redirect()->route('student.login')->with('warning', 'Login first before proceeding : )');
-        }
+        $user = Auth::guard('student');
 
         return $next($request);
     }

@@ -58,7 +58,7 @@
                         @enderror
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 mt-2">
                         <label class="form-label">Book Category</label>
                             <select class="form-select
                             @error('booksCategory')

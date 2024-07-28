@@ -41,7 +41,7 @@ class BooksController extends Controller
             'bookName'=>'required',
             'isbnNumber'=>'required|alpha_num|unique:books,isbn_number|min:11',
             'authorName'=>'required',
-            'bookImg'=>'required|mimes:png,jpg'
+            'bookImg'=>'max: 2058|mimes:png,jpg'
         ]);
 
         $book = Books::create([
