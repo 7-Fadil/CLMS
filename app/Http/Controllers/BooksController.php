@@ -14,9 +14,11 @@ class BooksController extends Controller
      */
     public function index()
     {
-        $bookCategory = BookCategory::all();
+        $bookCategory = BookCategory::with('booksCategory')->get();
+        $book = Books::all();
         return view('admin.pages.Books.index', [
-            'bookCategorys' => $bookCategory
+            'bookCategorys' => $bookCategory,
+            'books' => $book,
         ]);
     }
 

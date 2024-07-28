@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Books extends Model
 {
@@ -18,4 +19,14 @@ class Books extends Model
         'book_img',
         'is_active'
     ];
+
+    /**
+     * Get the user that owns the Books
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function books(): BelongsTo
+    {
+        return $this->belongsTo(BookCategory::class, 'books_category_uuid', 'uuid');
+    }
 }

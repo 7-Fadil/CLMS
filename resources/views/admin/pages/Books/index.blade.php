@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master', ['title' => 'books'])
 @section('content')
 <button id="addCurriculum" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#centermodal">Add Book <i class="fas fa-plus"></i></button>
 
@@ -101,40 +101,28 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>
-                    <span class="account-user-avatar">
-                        <img src="{{ asset('assets/images/users/avatar-blank.jpg') }}" alt="user-image" class="rounded-circle">
-                    </span>
-                </td>
-                <td>2011/04/25</td>
-                <td>
-                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>
-                    <span class="account-user-avatar">
-                        <img src="{{ asset('assets/images/users/avatar-blank.jpg') }}" alt="user-image" class="rounded-circle">
-                    </span>
-                </td>
-                <td>2011/07/25</td>
-                <td>
-                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                </td>
-            </tr>
+                @foreach ($books as $sn => $book)
+                    <img src="{{ asset('../public/'.$book->book_img) }}" alt="Book Imaagess">
+                    <tr>
+                        <td>{{ $sn+1 }}</td>
+                        <td>{{ $book->books_name }}</td>
+                        <td>{{ $book->isbn_number }}</td>
+                        <td>{{ $book->author }}</td>
+                        <td>
+                            @if ($book->book_img !== null)
+                                <img src="{{ asset('public/bookImage/'.$book->book_img) }}" alt="Book Image">
+                            @else
+                                {{ 'Book image not available' }}
+                            @endif
+                        </td>
+                        <td>{{ $book->books->book_category_name }}</td>
+                        <td>
+                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                        </td>
+                    </tr>
+                @endforeach
         </tbody>
     </table>
 </div>
