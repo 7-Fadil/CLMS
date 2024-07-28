@@ -9,6 +9,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\YearRegistrationController;
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentProfileController;
 use App\Http\Controllers\UserManagementController;
 
 /*
@@ -104,10 +105,15 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
 /**Student route started */
 Route::prefix('fukashere/E-library/student')->group(function(){
     Route::controller(StudentController::class)->group(function(){
-        Route::get('/dashboard', 'dashboard')->middleware('student')->name('student.dashboard');
+        Route::get('/dashboard', 'dashboard')->name('student.dashboard');
         Route::get('/login', 'view')->name('student.login');
         Route::post('/login', 'login')->name('login');
         Route::get('/logout', 'logout')->name('student.logout');
+    });
+
+    Route::controller(StudentProfileController::class)->middleware('student')->group(function(){
+        Route::get('/profile', 'studentProfile')->name('student.profile');
+        Route::post('/profile', 'storeStudentProfile')->name('save.studentProfile');
     });
 });
 /**Student route ended */

@@ -18,6 +18,7 @@ return new class extends Migration
             $table -> string('firstname', 50);
             $table -> string('surname', 50);
             $table -> string('othername', 50)->nullable();
+            $table -> string('matric_number')->unique();
             $table -> enum('gender', ['M', 'F']);
             $table -> date('birth_date');
             $table -> string('phone_number', 50)->unique();
@@ -26,6 +27,10 @@ return new class extends Migration
             $table -> string('nok_name', 50)->nullable();
             $table -> string('nok_address', 60)->nullable();
             $table -> string('nok_phone_number', 50)->nullable()->unique();
+            $table -> foreignId('state_id')->nullable();
+            $table -> foreignId('lga_id')->nullable();
+            $table -> foreignId('faculty_uuid', 100)->unique()->nullable();
+            $table -> foreignId('department_uuid', 100)->unique()->nullable();
             $table -> string('photo_path', 2043)->nullable();
             $table -> enum('is_active', [1, 0])->default(1);
             $table->timestamps();

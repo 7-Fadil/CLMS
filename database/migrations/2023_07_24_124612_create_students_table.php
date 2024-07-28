@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 100);
-            $table->string('first_name', 50)->nullable();
-            $table->string('other_name', 50)->nullable();
+            $table->string('name', 50)->nullable();
             $table->string('email_address', 100)->nullable();
-            $table->string('matric_number', 100)->nullable();
             $table->string('password', 100)->nullable();
             $table->string('profile_pic', 100)->nullable();
             $table->boolean('status')->nullable()->default(1);

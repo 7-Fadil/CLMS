@@ -43,9 +43,17 @@
                     <!--- Sidemenu -->
                     <ul class="side-nav">
                         <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
+                            <a href="{{ route('student.dashboard') }}" class="side-nav-link">
                                 <i class="uil-home-alt"></i>
                                 <span> Dashboards </span>
+                            </a>
+                        </li>
+
+                        {{-- profile --}}
+                        <li class="side-nav-item">
+                            <a href="{{ route('student.profile') }}" class="side-nav-link">
+                                <i class="uil-user"></i>
+                                <span> Profile </span>
                             </a>
                         </li>
                     </ul>
