@@ -104,19 +104,18 @@
                                 <span class="text-white-50 ms-1">Welcome to Federal University Of Kashere Gombe E-LIBRARY</span>
                             </div>
                             <h2 class="text-white fw-normal mb-4 mt-3 hero-title">
-                                Start <strong>Education</strong> With Our School
+                                Introducing the <strong>'Knowledge Hub'</strong> Library Management System at Federal University Kashere!
                             </h2>
 
                             <p class="mb-4 font-16 text-white-50">
-                                The Federal University, Kashere (FUKASHERE) is a Nigerian university and is located in Kashere, Gombe State.Federal University, Kashere has been officially accredited and/or recognized by the National Universities Commission (NUC), Nigeria.
-                                This camp was design for hight school student who are considering a career in education.Come explore your interest with us!
+                                The <strong>K-hub</strong> <i>'Knowledge Hub'</i> is a cutting-edge platform designed to streamline and enhance the library experience for students, faculty, and staff at Springfield University. This innovative system allows users to easily search and access a vast collection of books, journals, and digital resources, making research and learning more efficient and effective. With features like online cataloging, circulation management, and personalized recommendations, the Knowledge Hub is the perfect tool for academic success.
                             </p>
 
                             <p class="mb-4 font-16 text-white-50">
-                                Join us in the College of Education on the FUK Campus for 5 day, 4 night camp to explore innovative teaching methods, advance education technology, and global learning.
+                                Whether you're a student working on a research project, a faculty member preparing for a lecture, or simply a book lover looking for your next great read, the Knowledge Hub has something for everyone. With its user-friendly interface and robust functionality, this system is set to revolutionize the way our community interacts with the library. So why wait? Explore the Knowledge Hub today and discover a world of knowledge at your fingertips!
                             </p>
 
-                            <a href="" target="_blank" class="btn btn-success">Preview <i class="mdi mdi-arrow-right ms-1"></i></a>
+                            <a href="" target="_blank" class="btn btn-success">Sign up <i class="mdi mdi-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                     <div class="col-md-5 offset-md-2">

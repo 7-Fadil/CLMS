@@ -13,6 +13,7 @@
             <div class="modal-body">
                 <form action="{{ route('save.department') }}" method="POST">
                     @csrf
+                    
                     <div class="mb-3">
                         <label for="simpleinput" class="form-label">Department</label>
                         <input type="text" id="simpleinput" name="department" class="form-control @error('department')
@@ -53,7 +54,7 @@
                         @if ($item->status == "1")
                             <span class="badge badge-success-lighten rounded-pill">Active</span>
                         @else
-                        <span class="badge badge-danger-lighten rounded-pill">In-active</span>
+                            <span class="badge badge-danger-lighten rounded-pill">In-active</span>
                         @endif
                     </td>
                     <td>

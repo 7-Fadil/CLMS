@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCourseOfStudyRequest;
-use App\Http\Requests\StoreCuriculumRequest;
-use App\Models\CourseOfStudy;
+use App\Models\Faculty;
 use App\Models\Curriculum;
 use App\Models\Department;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-
+use App\Models\CourseOfStudy;
 use Illuminate\Support\Facades\Auth;
+
+use App\Http\Requests\StoreCuriculumRequest;
+use App\Http\Requests\StoreCourseOfStudyRequest;
 
 class AdminController extends Controller
 {
@@ -167,5 +168,34 @@ class AdminController extends Controller
     public function libraryCard()
     {
         return view();
+    }//end method
+
+    public function faculty()
+    {
+        $facultyIndex = Faculty::all();
+        return view('admin.pages.faculty.index', [
+            'facultys' => $facultyIndex
+        ]);
+    }//end method
+
+    public function saveFaculty(Request $request)
+    {
+        // dd($request->all());
+        $this->validate($request, [
+            'facultyName' => 'required',
+            'shortName' => 'required'
+        ]);
+
+        $faculty = Faculty::create([
+            'uuid' => Str::orderedUuid(),
+            'faculty_name' => $request->facultyName,
+            'faculty_short_code_name' => $request->shortName
+        ]);
+
+        if ($faculty) {
+            return to_route('faculty')->with('success', 'Data Insertion Successfull');
+        }else{
+            return redirect()->back()->with('error', 'Someething went wrong');
+        }
     }//end method
 }

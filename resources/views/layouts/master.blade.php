@@ -180,6 +180,10 @@
                                     </li>
 
                                     <li>
+                                        <a href="{{ route('faculty') }}"><i class="uil-briefcase-alt"></i> Faculty</a>
+                                    </li>
+
+                                    <li>
                                         <a href="{{ route('create.department') }}"><i class="fas fa-list"></i> Department</a>
                                     </li>
 

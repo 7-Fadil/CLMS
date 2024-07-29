@@ -68,6 +68,10 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
         Route::get('/profile', 'profile')->name('profile');
         /** profile route ended */
 
+        /** faculty route */
+        Route::get('/faculty', 'faculty')->name('faculty');
+        Route::post('/faculty/save', 'saveFaculty')->name('save.faculty');
+
         /** library card route */
         Route::get('/create/library/card', 'libraryCard')->name('library.card');
     });
