@@ -51,29 +51,37 @@ class AdminController extends Controller
     /** Method for viewing Department */
     public function viewDepartment()
     {
-        $fetch=Department::all();
+        $fetch=Department::with('faculty')->get();
+        $faculty = Faculty::all();
         return view('admin.pages.department.index', [
-            'departments'=>$fetch
+            'departments'=>$fetch,
+            'facultys' => $faculty
         ]);
     }//end method
     /** Method for storng Department */
     public function storeDepartment(Request $request)
     {
         $this->validate($request, [
-            'department'=>['required', 'string']
+            'department' => 'required|unique:departments,department_name|alpha'
         ]);
         $department=Department::create([
             'uuid'=>Str::orderedUuid(),
+            'faculty_uuid'=>$request->faculty,
             'department_name'=>$request->department
         ]);
-        return to_route('create.department')->with('success', 'Record successfully inserted');
+
+        if ($department) {
+            return to_route('create.department')->with('success', 'Record successfully inserted');
+        }else {
+            return redirect()->back()->with('error', 'something went wrong');
+        }
     }//end method
     /** Method for updating Departemtn */
     public function updateDepartment(Department $department, Request $request)
     {
         Department::where('uuid', $department->uuid)->update([
             'department_name'=>$request->department,
-            'status'=>$request->status
+            'is_Active'=>$request->status
         ]);
         return to_route('create.department')->with('success', 'Record successfully updated');
     }//end method

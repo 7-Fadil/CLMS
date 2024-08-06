@@ -13,7 +13,15 @@
             <div class="modal-body">
                 <form action="{{ route('save.department') }}" method="POST">
                     @csrf
-                    
+                    <div class="mt-2">
+                        <label for="simpleinput">Faculty</label>
+                        <select class="form-select" name="faculty" id="example-select">
+                            @foreach ($facultys as $faculty)
+                                <option hidden>-- faculty --</option>
+                                <option value="{{ $faculty->uuid }}">{{ $faculty->faculty_name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="mb-3">
                         <label for="simpleinput" class="form-label">Department</label>
                         <input type="text" id="simpleinput" name="department" class="form-control @error('department')
@@ -48,10 +56,10 @@
             @foreach ($departments as $sn => $item)
                 <tr>
                     <td>{{ $sn+1 }}</td>
-                    <td>{{ $item -> facultyName ?? null }}</td>
+                    <td>{{ $item -> faculty -> faculty_name ?? null }}</td>
                     <td>{{ $item->department_name }}</td>
                     <td>
-                        @if ($item->status == "1")
+                        @if ($item->is_active == "1")
                             <span class="badge badge-success-lighten rounded-pill">Active</span>
                         @else
                             <span class="badge badge-danger-lighten rounded-pill">In-active</span>
@@ -75,11 +83,11 @@
                                                 <label for="simpleinput" class="form-label">Department</label>
                                                 <input type="text" name="department" value="{{ $item->department_name }}" class="form-control @error('department')
                                                     is-invalid
-                                                @enderror" value="" readonly>
+                                                @enderror" >
                                                 <div class="mb-3">
                                                     <label for="example-select" class="form-label">Status</label>
                                                     <select class="form-select" name="status">
-                                                        <option hidden value="{{ $item->status }}">@if ($item->status == "1")
+                                                        <option hidden value="{{ $item->is_active }}">@if ($item->is_active == "1")
                                                             Active
                                                         @else
                                                             Inactive

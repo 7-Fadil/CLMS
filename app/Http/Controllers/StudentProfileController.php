@@ -18,5 +18,5 @@ class StudentProfileController extends Controller
     public function storeStudentProfile(Request $request)
     {
         dd($request->all());
-    }
+    }//end method
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Department extends Model
@@ -12,6 +13,7 @@ class Department extends Model
 
     protected $fillable=[
         'uuid',
+        'faculty_uuid',
         'department_name'
     ];
     //relationship between course of study and department
@@ -21,12 +23,12 @@ class Department extends Model
     }
 
     /**
-     * Get the department associated with the Department
+     * Get the Faculty that owns the Department
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function departments(): HasOne
+    public function faculty(): BelongsTo
     {
-        return $this->hasOne(Faculty::class, 'faculty_uuid', 'uuid');
+        return $this->belongsTo(Faculty::class, 'faculty_uuid', 'uuid');
     }
 }

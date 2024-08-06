@@ -17,12 +17,13 @@ class Faculty extends Model
     ];
 
     /**
-     * Get all of the comments for the Faculty
+     * Get all of the department for the Faculty
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function faculty(): HasMany
+    public function department(): HasMany
     {
         return $this->hasMany(Department::class, 'faculty_uuid', 'uuid');
     }
+
 }

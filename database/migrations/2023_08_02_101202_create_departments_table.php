@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 100);
-            $table -> foreignId('faculty_uuid')->unique();
+            $table -> string('faculty_uuid');
             $table->string('department_name')->unique();
             $table->enum('is_active', [1, 0])->default(1);
             $table->timestamps();

@@ -136,7 +136,7 @@
                         <div class="text-center">
                             <h1 class="mt-0"><i class="mdi mdi-heart-multiple-outline"></i></h1>
                             <h3>Features you'll <span class="text-danger">love</span></h3>
-                            <p class="text-muted mt-2">Hyper comes with next generation ui design and have multiple benefits
+                            <p class="text-muted mt-2">K-hub comes with next generation ui design and have multiple benefits
                             </p>
                         </div>
                     </div>
@@ -181,14 +181,14 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <h3>Get In <span class="text-primary">Touch</span></h3>
-                            <p class="text-muted mt-2">Please fill out the following form and we will get back to you shortly. For more
-                                <br>information please contact us.</p>
+                            <p class="text-muted mt-2">Need help or have questions about the Knowledge Hub <i>K-hub</i> ? <br> Contact us via our email address at kHub@fukashere.edu or (+234) 81-1887-0934. <br> Visit us in person or fill out our online form. Let us support your academic success!.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="row align-items-center mt-3">
                     <div class="col-md-4">
+                        <h4 class="text-center">Contact us <span class="text-primary">On</span></h4>
                         <p class="text-muted"><span class="fw-bold">Customer Support:</span><br> <span class="d-block mt-1">+234 8118870934</span></p>
                         <p class="text-muted mt-4"><span class="fw-bold">Email Address:</span><br> <span class="d-block mt-1">7.fadil@gmail.com</span></p>
                         <p class="text-muted mt-4"><span class="fw-bold">Office Address:</span><br> <span class="d-block mt-1">Federal University Kashere Gombe, Gombe State.</span></p>
