@@ -1,6 +1,6 @@
 @extends('layouts.master', ['title' => 'books'])
 @section('content')
-<button id="addCurriculum" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#centermodal">Add Faculty <i class="fas fa-plus"></i></button>
+<button id="addFaculty" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#centermodal">Add Faculty <i class="fas fa-plus"></i></button>
 
 <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -27,7 +27,7 @@
                         <input type="text" id="simpleinput" name="shortName" class="form-control @error('shortName')
                             is-invalid
                         @enderror">
-                        @error('shortCode')
+                        @error('shortName')
                             <div class="text-danger">
                                 {{ $message }}
                             </div>
@@ -81,3 +81,12 @@
 
 
 @endsection
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+@if ($errors->any())
+    <script>
+        $(function() {
+            $('#addFaculty').click();
+        });
+    </script>
+@endif
+
