@@ -92,7 +92,7 @@
                                 </div><!-- /.modal-content -->
                             </div><!-- /.modal-dialog -->
                         </div><!-- /.modal -->
-                        
+
                         <span class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#danger-header-modal<?php echo $item->uuid ?>">Delete
                             <i class="fas fa-trash"></i>
                         </span>
@@ -133,6 +133,10 @@
 
 
 
+
+@endsection
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
 @if($errors->any())
     <script>
         $(function() {
@@ -140,5 +144,3 @@
         });
     </script>
 @endif
-@endsection
-

@@ -100,12 +100,17 @@ class BooksController extends Controller
     }//end method
     public function bookCategoryPost(Request $request)
     {
-        // return $request;
+        $this->validate($request, [
+            'bookCategory' => 'required|unique:book_categories,book_category_name'
+        ]);
         $bookCategory = BookCategory::create([
             'uuid' => Str::orderedUuid(),
             'book_category_name' => $request->bookCategory
         ]);
 
-        return to_route('book.category')->with('success', 'Record successfully inseted');
+        if ($bookCategory) {
+            return to_route('book.category')->with('success', 'Record successfully inseted');
+        }
+
     }
 }
