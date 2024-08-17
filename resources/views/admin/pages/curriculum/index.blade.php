@@ -90,7 +90,7 @@
                 @foreach ($courses as $sn => $fetch)
                     <tr>
                         <td>{{ $sn+1 }}</td>
-                        <td>{{ $fetch->curriculum->course_of_study }}</td>
+                        <td>{{ $fetch->courses->course_of_study ?? null }}</td>
                         <td>{{ $fetch->course_title }}</td>
                         <td>{{ $fetch->course_code }}</td>
                         <td>
@@ -116,7 +116,7 @@
                                                 @method('PUT')
                                                 <div class="mb-3">
                                                     <label for="simpleinput" class="form-label">Course of study</label>
-                                                    <input type="text" name="courseOfStudy" value="{{ $fetch->curriculum->course_of_study }}" class="form-control @error('courseOfStudy')
+                                                    <input type="text" name="courseOfStudy" value="{{ $fetch->courses->course_of_study ?? null}}" class="form-control @error('courseOfStudy')
                                                         is-invalid
                                                     @enderror" @readonly(true)>
                                                 </div>

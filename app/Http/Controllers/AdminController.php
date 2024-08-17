@@ -125,10 +125,11 @@ class AdminController extends Controller
         return to_route('create.courses')->with('success', 'Course of study was successfullly updated');
     }//end method
     /** Curriculum method */
-    public function curriculum(Request $request)
+    public function curriculum()
     {
         $courses=Curriculum::with('curriculum')->get();
-        $department=Department::with('department')->get();
+        $department=Department::with('courses')->get();
+        // return $department;
         return view('admin.pages.curriculum.index',[
             'department'=>$department,
             'courses'=>$courses
