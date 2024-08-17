@@ -32,7 +32,7 @@
                     <div id="cardCollpase1" class="collapse pt-3 show">
                         <div>
                             <label class="form-label">Matric Number:</label>
-                            <input type="text" name="matricNumber" class="form-control" maxlength="11" data-toggle="maxlength">
+                            <input type="text" name="matricNumber" class="form-control" value="{{ Auth::guard('student')->user()->matric_number }}" @readonly(true)>
                         </div>
                     </div>
 

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class CourseOfStudy extends Model
 {
@@ -19,8 +20,17 @@ class CourseOfStudy extends Model
     //relationship between course of study and department
     public function couseOfStudy()
     {
-        return $this->belongsTo(Department::class, 'department_uuid', 'uuid');
         return $this->hasMany(Curriculum::class, 'courseOfStudy_uuid', 'uuid');
+    }
+
+    /**
+     * Get the department that owns the CourseOfStudy
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function department(): BelongsTo
+    {
+        return $this->belongsTo(Department::class, 'department_uuid', 'uuid');
     }
 
 }

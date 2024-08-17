@@ -165,8 +165,8 @@
     </script>
 @endif
 @endsection
-{{-- <script src="{{ asset('assets/js/jquery.min.js') }}"></script> --}}
-{{-- <script>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script>
 
     $(document).ready(function(){
         $('#department').change(function(){
@@ -190,4 +190,4 @@
         });
         $('#test1').hide();
     });
-</script> --}}
+</script>

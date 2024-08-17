@@ -94,7 +94,8 @@ class AdminController extends Controller
     /** Method for viewing course of study */
     public function viewCourse()
     {
-        $courses=CourseOfStudy::with('couseOfStudy')->get();
+        $courses=CourseOfStudy::with('department')->get();
+        // return $courses;
         $department=Department::all();
         return view('admin.pages.courseOfStudy.index', [
             'departments'=>$department,
@@ -104,7 +105,7 @@ class AdminController extends Controller
     /** Method for storing courese of study */
     public function storeCourseOfStudy(StoreCourseOfStudyRequest $request)
     {
-        dd($request->department);
+        // dd($request->department);
         $courses=CourseOfStudy::create([
             'uuid'=>Str::orderedUuid(),
             'department_uuid'=>$request->department,

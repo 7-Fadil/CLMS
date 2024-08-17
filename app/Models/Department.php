@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -16,8 +16,13 @@ class Department extends Model
         'faculty_uuid',
         'department_name'
     ];
-    //relationship between course of study and department
-    public function department()
+
+    /**
+     * Get all of the courses for the Department
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function courses(): HasMany
     {
         return $this->hasMany(CourseOfStudy::class, 'department_uuid', 'uuid');
     }

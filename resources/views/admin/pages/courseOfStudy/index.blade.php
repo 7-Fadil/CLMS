@@ -103,7 +103,7 @@
                 @foreach ($courses as $sn => $course)
                     <tr>
                         <td>{{ $sn + 1 }}</td>
-                        <td>{{ $course->couseOfStudy->department_name ?? '' }}</td>
+                        <td>{{ $course->department->department_name ?? null }}</td>
                         <td>{{ $course->course_of_study }}</td>
                         <td>{{ $course->short_name }}</td>
                         <td>
@@ -132,7 +132,7 @@
                                                 <div class="mb-3">
                                                     <label for="simpleinput" class="form-label">Department</label>
                                                     <input type="text" name="department"
-                                                        value="{{ $course->couseOfStudy->department_name ?? 'null' }}"
+                                                        value="{{ $course->department->department_name ?? 'null' }}"
                                                         class="form-control @error('department')
                                                     is-invalid
                                                 @enderror"
@@ -183,6 +183,7 @@
 
 
 @endsection
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 @if ($errors->any())
         <script>
             $(function() {
@@ -190,4 +191,4 @@
             });
         </script>
     @endif
-{{-- <script src="{{ asset('assets/js/jquery.min.js') }}"></script> --}}
+
