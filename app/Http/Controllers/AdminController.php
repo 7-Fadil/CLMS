@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests\StoreCuriculumRequest;
 use App\Http\Requests\StoreCourseOfStudyRequest;
+use App\Models\YearRegistration;
 
 class AdminController extends Controller
 {
@@ -175,9 +176,18 @@ class AdminController extends Controller
             return $stateLga;
         }
     }//end method
-    public function libraryCard()
+    public function getSession()
     {
-        return view();
+        $sessions = YearRegistration::all();
+        if ($sessions) {
+            $yearSession = '';
+            $yearSession .= '<option value="" hidden>-- select session --</option>';
+            foreach ($sessions as $session)
+            {
+                $yearSession .= "<option value='".$session->uuid."'>".$session->year_name."</option>";
+            }
+            return $yearSession;
+        }
     }//end method
 
     public function faculty()

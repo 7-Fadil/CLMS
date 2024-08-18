@@ -56,6 +56,7 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
         /**Curriculum routes started */
         Route::get('/create/curriculum', 'curriculum')->name('create.curriculum');
         Route::get('/course-of-study/{department_id}', 'getCourses')->name('department.getCourses');
+        Route::get('/session', 'getSession')->name('getSession');
         Route::post('/create/curriculum','storeCurriculum')->name('create.curriculum');
         Route::put('/edit/curriculum/{curriculum:uuid}', 'editCurriculum')->name('edit.curriculum');
 

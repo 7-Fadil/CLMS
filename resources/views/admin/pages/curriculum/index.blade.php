@@ -43,6 +43,19 @@
                                 </div>
                             @enderror
                         </div>
+                        <div class="mb-3" id="session">
+                            <label for="example-select" class="form-label">Session:</label>
+                            <select class="form-select @error('session')
+                            is-invalid
+                            @enderror" name="session" id="session">
+                            </select>
+                            {{-- <input type="text" name="department" hidden id=""> --}}
+                            @error('session')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                         <div class="mb-3">
                             <label for="simpleinput" class="form-label">Course title:</label>
                             <input type="text" id="simpleinput" name="courseTitle" class="form-control @error('courseTitle')
@@ -90,7 +103,7 @@
                 @foreach ($courses as $sn => $fetch)
                     <tr>
                         <td>{{ $sn+1 }}</td>
-                        <td>{{ $fetch->courses->course_of_study ?? null }}</td>
+                        <td>{{ $fetch->id ?? null }}</td>
                         <td>{{ $fetch->course_title }}</td>
                         <td>{{ $fetch->course_code }}</td>
                         <td>
@@ -182,12 +195,29 @@
             });
         });
 
-        $('#test').change(function(){
+        $('#courseOfStudy').html();
+        $.ajax({
+            url: '../session',
+            method: 'GET',
+            success: function (res){
+                $('#session').html(res);
+            }
+        })
+
+        $('#test').change(function()
+        {
             if($(this).val() != null)
             {
                 $('#test1').show();
             }
         });
-        $('#test1').hide();
+        $('#test1').hide().change(function()
+        {
+            if($(this).val() != null)
+            {
+                $('#session').show();
+            }
+        });
+        $('#session').hide();
     });
 </script>
