@@ -115,7 +115,108 @@
                                 Whether you're a student working on a research project, a faculty member preparing for a lecture, or simply a book lover looking for your next great read, the Knowledge Hub has something for everyone. With its user-friendly interface and robust functionality, this system is set to revolutionize the way our community interacts with the library. So why wait? Explore the Knowledge Hub today and discover a world of knowledge at your fingertips!
                             </p>
 
-                            <a href="" target="_blank" class="btn btn-success">Sign up <i class="mdi mdi-arrow-right ms-1"></i></a>
+                            <button id="signUp" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#centermodal">Sign up <i class="mdi mdi-arrow-right ms-1"></i></button>
+
+                            <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myCenterModalLabel">Create account</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{ route('create.student') }}" method="POST">
+                                                @csrf
+                                                <label for="simpleinput" class="form-label">First name:</label>
+                                                <input type="text" id="simpleinput" name="firstName" class="form-control @error('firstName')
+                                                    is-invalid
+                                                @enderror" value="{{ old('firstName') }}">
+                                                @error('firstName')
+                                                    <div class="text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+
+                                                <div class="mt-2">
+                                                    <label for="simpleinput" class="form-label">Surname:</label>
+                                                    <input type="text" id="simpleinput" name="surname" class="form-control @error('surname')
+                                                        is-invalid
+                                                    @enderror" value="{{ old('surrname') }}">
+                                                    @error('surname')
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <label for="simpleinput" class="form-label">Other name:</label>
+                                                    <input type="text" id="simpleinput" name="otherName" class="form-control @error('otherName')
+                                                        is-invalid
+                                                    @enderror" value="{{ old('otherName') }}">
+                                                    @error('otherName')
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <label for="simpleinput" class="form-label">Matric number:</label>
+                                                    <input type="text" id="simpleinput" name="matricNumber" class="form-control @error('matricNumber')
+                                                        is-invalid
+                                                    @enderror" value="{{ old('matricNumber') }}">
+                                                    @error('matricNumber')
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <label for="simpleinput" class="form-label">Email address:</label>
+                                                    <input type="text" id="simpleinput" name="emailAddress" class="form-control @error('emailAddress')
+                                                        is-invalid
+                                                    @enderror" value="{{ old('emailAddress') }}">
+                                                    @error('emailAddress')
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <label for="simpleinput" class="form-label">Password:</label>
+                                                    <input type="password" id="simpleinput" name="password" class="form-control @error('password')
+                                                        is-invalid
+                                                    @enderror">
+                                                    @error('password')
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mt-2">
+                                                    <label for="simpleinput" class="form-label">Confirm password:</label>
+                                                    <input type="password" id="simpleinput" name="confirmPassword" class="form-control @error('confirmPassword')
+                                                        is-invalid
+                                                    @enderror">
+                                                    @error('confirmPassword')
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+
+                                                <hr>
+                                                <button type="submit" class="btn btn-secondary">Submit</button>
+                                            </form>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+
                         </div>
                     </div>
                     <div class="col-md-5 offset-md-2">
@@ -312,6 +413,15 @@
             </div>
         </footer>
         <!-- END FOOTER -->
+
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        @if ($errors->any())
+            <script>
+                $(document).ready(function() {
+                    $('#signUp').click()
+                });
+            </script>
+        @endif
 
         <!-- bundle -->
         <script src="{{ asset('assets/js/vendor.min.js') }}"></script>

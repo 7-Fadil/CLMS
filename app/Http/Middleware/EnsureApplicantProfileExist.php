@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\StudentProfile;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,12 @@ class EnsureApplicantProfileExist
     public function handle(Request $request, Closure $next): Response
     {
 
-        $user = Auth::guard('student');
+        $checkStudentProfile = StudentProfile::where('student_login_uuid', '=', Auth::guard('student')->user()->uuid)->exists();
+
+        if ($checkStudentProfile == false)
+        {
+            return to_route('student.profile')->with('error', 'You have to complete your profile before proceeding');
+        }
 
         return $next($request);
     }

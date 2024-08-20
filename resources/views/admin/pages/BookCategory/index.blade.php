@@ -74,9 +74,6 @@
     </table>
 </div>
 
-@endsection
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-
 @if ($errors->any())
     <script>
         $(function(){
@@ -84,3 +81,6 @@
         });
     </script>
 @endif
+
+@endsection
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>

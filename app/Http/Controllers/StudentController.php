@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreStudent;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class StudentController extends Controller
 {
@@ -32,5 +34,35 @@ class StudentController extends Controller
     {
         Auth::guard('student')->logout();
         return to_route('student.login')->with('success', 'You have successfully logout');
+    }//end method
+
+    // method for creating a student
+    public function createStudent(Request $request)
+    {
+        $this->validate($request, [
+            'firstName' => 'required',
+            'surname' => 'required',
+            'otherName' => 'required',
+            'password' => 'required|alpha_num',
+            'confirmPassword' => 'required|same:password',
+            'emailAddress' => 'required|email|unique:students,email_address',
+            'matricNumber' => 'required|unique:students,matric_number',
+        ]);
+
+        $student = Student::create([
+            'uuid' => Str::orderedUuid(),
+            'first_name' => $request->firstName,
+            'surname' => $request->surname,
+            'other_name' => $request->otherName,
+            'email_address' => $request->emailAddress,
+            'matric_number' => $request->matricNumber,
+            'password' => Hash::make($request->password)
+        ]);
+
+        if ($student) {
+            return to_route('student.login')->with('success', 'Account successfully created');
+        }else {
+            return redirect()->back()->with('error', 'Something went wrong');
+        }
     }
 }

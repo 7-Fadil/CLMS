@@ -21,4 +21,15 @@ class Student extends Authenticatable
 
     protected $guard='student';
 
+    protected $fillable = [
+        'uuid',
+        'first_name',
+        'surname',
+        'other_name',
+        'email_address',
+        'matric_number',
+        'password',
+        'status'
+    ];
+
 }

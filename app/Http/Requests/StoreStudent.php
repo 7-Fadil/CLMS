@@ -27,7 +27,7 @@ class StoreStudent extends FormRequest
             'password'=>['required','max:8'],
             'cgpa'=>['required','min:2.5','max:5.0'],
             'dob'=>['required'],
-            'courseOfStudy'=>['required'],
+            'courseOfStudy'=>['required', 'starts_with:foo,bar'],
             'phone_number'=>['required'],
             'gender'=>['required'],
             'picture'=>['required'],

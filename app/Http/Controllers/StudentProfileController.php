@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreStudentProfile;
 use App\Models\Department;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,8 @@ class StudentProfileController extends Controller
         ]);
     }//end method
 
-    public function storeStudentProfile(Request $request)
+    public function storeStudentProfile(StoreStudentProfile $request)
     {
-        dd($request->all());
+        // dd($request->all());
     }//end method
 }

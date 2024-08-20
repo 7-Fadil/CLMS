@@ -1,6 +1,6 @@
 @extends('layouts.master', ['title' => 'books'])
 @section('content')
-<button id="addCurriculum" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#centermodal">Add Book <i class="fas fa-plus"></i></button>
+<button id="addBook" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#centermodal">Add Book <i class="fas fa-plus"></i></button>
 
 <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -126,5 +126,14 @@
     </table>
 </div>
 
+@if ($errors->any())
+<script>
+    $(function()
+    {
+        $('#addBook').click()
+    })
+</script>
+@endif
 
 @endsection
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>

@@ -4,8 +4,10 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookOverDueController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SearchCatalogController;
 use App\Http\Controllers\YearRegistrationController;
 
 use App\Http\Controllers\StudentController;
@@ -114,11 +116,20 @@ Route::prefix('fukashere/E-library/student')->group(function(){
         Route::get('/login', 'view')->name('student.login');
         Route::post('/login', 'login')->name('login');
         Route::get('/logout', 'logout')->name('student.logout');
+        Route::post('/create/student', 'createStudent')->name('create.student');
     });
 
     Route::controller(StudentProfileController::class)->middleware('student')->group(function(){
         Route::get('/profile', 'studentProfile')->name('student.profile');
         Route::post('/profile', 'storeStudentProfile')->name('save.studentProfile');
+    });
+
+    Route::controller(SearchCatalogController::class)->group(function(){
+        Route::get('/search/catalog', 'create')->middleware('isStudentProfileExist')->name('search.catalog');
+    });
+
+    Route::controller(BookOverDueController::class)->group(function(){
+        Route::get('/book/overdue', 'create')->middleware('isStudentProfileExist')->name('book.overdue');
     });
 });
 /**Student route ended */

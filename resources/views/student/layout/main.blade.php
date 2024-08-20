@@ -69,7 +69,7 @@
 
                         {{-- overdue books --}}
                         <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
+                            <a href="{{ route('book.overdue') }}" class="side-nav-link">
                                 <i class="uil-book-alt uil-exclamation-octagon"></i>
                                 <span>Overdue Books </span>
                             </a>
@@ -85,7 +85,7 @@
 
                         {{-- search catalog --}}
                         <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
+                            <a href="{{ route('search.catalog') }}" class="side-nav-link">
                                 <i class="uil-search"></i>
                                 <span>Search Catalog</span>
                             </a>
