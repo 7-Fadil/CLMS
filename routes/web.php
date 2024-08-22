@@ -63,7 +63,7 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
         Route::put('/edit/curriculum/{curriculum:uuid}', 'editCurriculum')->name('edit.curriculum');
 
         /* student route started */
-        Route::get('/create/student','view')->name('create.student');
+        Route::get('/student','viewStudent')->name('view.student');
         Route::post('/create/student','store')->name('save.student');
         /* student route ended */
 

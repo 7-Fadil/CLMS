@@ -36,39 +36,39 @@
                         </div>
                     </div>
 
-                    <div id="cardCollpase1" class="collapse pt-3 show">
-                        <div>
-                            <label class="form-label">Faculty:</label>
-                            <input type="text" name="faculty" class="form-control @error('faculty')
-
-                            @enderror" maxlength="12" data-toggle="maxlength">
-                            @error('faculty')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
+                    <div class="mb-3 mt-3" id="test">
+                        <label for="example-select" class="form-label">Faculty:</label>
+                        <select class="form-select @error('faculty')
+                        is-invalid
+                        @enderror" name="faculty" id="faculty">
+                            @foreach ($facultys as $faculty)
+                                <option hidden>-- select department --</option>
+                                <option value="{{ $faculty->uuid }}">{{ $faculty->faculty_name }}</option>
+                            @endforeach
+                        </select>
+                        {{-- <input type="text" name="department" hidden id=""> --}}
+                        @error('faculty')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
-                    <div id="cardCollpase1" class="collapse pt-3 show">
-                        <div>
-                            <label class="form-label">Department:</label>
-                            <!-- Single Select -->
-                            <select class="form-control select2 @error('department')
-                                is-invalid
-                            @enderror" name="department" data-toggle="select2">
-                                <optgroup label="Select Department">
-                                    @foreach ($departments as $department)
-                                    <option value="{{ $department->uuid }}">{{ $department->department_name }}</option>
-                                    @endforeach
-                                </optgroup>
-                            </select>
-                            @error('department')
-                                <div class="text-danger">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
+                    <div class="mb-3" id="test1">
+                        <label for="example-select" class="form-label">Department:</label>
+                        <select class="form-select @error('department')
+                        is-invalid
+                        @enderror" name="department" id="department">
+                            @foreach ($departments as $dapartment)
+                                <option hidden>-- select faculty --</option>
+                                <option value="{{ $dapartment->uuid }}">{{ $dapartment->department_name }}</option>
+                            @endforeach
+                        </select>
+                        @error('department')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div id="cardCollpase1" class="collapse pt-3 show">
@@ -104,7 +104,7 @@
                             <label class="form-label">Next of kin phone number:</label>
                             <input type="text" name="nokPhoneNumber" class="form-control @error('nokPhoneNumber')
                                 is-invalid
-                            @enderror" maxlength="11" data-toggle="maxlength">
+                            @enderror" maxlength="11" data-toggle="maxlength" value="{{ old('nokPhoneNumber') }}">
                             @error('nokPhoneNumber')
                                 <div class="text-danger">
                                     {{ $message }}
@@ -160,11 +160,11 @@
                     <div class="mt-2">
                         <label class="form-label">Gender:</label>
                         <div class="form-check form-check-inline">
-                            <input type="radio" id="customRadio3" value="male" name="gender" class="form-check-input">
+                            <input type="radio" id="customRadio3" name="gender" value="M" class="form-check-input">
                             <label class="form-check-label" for="customRadio3">Male</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input type="radio" id="customRadio4" value="female" name="gender" class="form-check-input">
+                            <input type="radio" id="customRadio4" name="gender" value="F" class="form-check-input">
                             <label class="form-check-label" for="customRadio4">Female</label>
                         </div><br>
                         @error('gender')
@@ -198,7 +198,7 @@
                             <label class="form-label">Next of kin name:</label>
                             <input type="text" name="nokName" class="form-control @error('nokName')
                                 is-invalid
-                            @enderror" maxlength="50" data-toggle="maxlength">
+                            @enderror" maxlength="50" data-toggle="maxlength" value="{{ old('nokName') }}">
                             @error('nokName')
                                 <div class="text-danger">
                                     {{ $message }}
@@ -212,7 +212,7 @@
                             <label class="form-label">Next of kin address:</label>
                             <input type="text" name="nokAddress" class="form-control @error('nokAddress')
                                 is-invalid
-                            @enderror" maxlength="150" data-toggle="maxlength">
+                            @enderror" maxlength="150" data-toggle="maxlength" value="{{ old('nokAddress') }}">
                             @error('nokAddress')
                                 <div class="text-danger">
                                     {{ $message }}
@@ -260,7 +260,20 @@
     </div>
     <!-- end row -->
 </form>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script>
+    $(document).ready(function(){
 
+        $('#test').change(function()
+        {
+            if($(this).val() != null)
+            {
+                $('#test1').show();
+            }
+        });
+        $('#test1').hide();
+    });
+</script>
 
 @endsection
 

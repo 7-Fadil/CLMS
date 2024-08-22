@@ -180,7 +180,6 @@
 @endsection
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <script>
-
     $(document).ready(function(){
         $('#department').change(function(){
             var department_id = $(this).val();

@@ -88,7 +88,7 @@
                             <div class="collapse" id="report">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="#"><i class="mdi mdi-account-details"></i> Student</a>
+                                        <a href="{{ route('view.student') }}"><i class="mdi mdi-account-details"></i> Student</a>
                                     </li>
                                     <li>
                                         <a href="#"><i class="mdi mdi-bookmark"></i> Books</a>

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests\StoreCuriculumRequest;
 use App\Http\Requests\StoreCourseOfStudyRequest;
+use App\Models\StudentProfile;
 use App\Models\YearRegistration;
 
 class AdminController extends Controller
@@ -218,4 +219,13 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Someething went wrong');
         }
     }//end method
+
+    public function viewStudent()
+    {
+        $studentProfile = StudentProfile::with('department', 'faculty')->get();
+        // return $studentProfile;
+        return view('admin.pages.manageSdnt.index', [
+            'profiles' => $studentProfile,
+        ]);
+    }
 }

@@ -23,16 +23,17 @@ class StoreStudentProfile extends FormRequest
     {
         return [
             'faculty' => 'required',
-            'phoneNumber' => 'required|numeric|max:11',
+            'phoneNumber' => 'required|numeric|min:11|unique:student_profiles,phone_number',
             'resedentialAddress' => 'required',
-            'nokPhoneNumber' => 'required|numeric|max:11',
-            'dob' => 'required|date',
+            'nokPhoneNumber' => 'required|numeric|min:11|unique:student_profiles,nok_phone_number',
+            'dob' => 'required',
             'gender' => 'required',
-            'profileImage' => 'required|mimes:png,jpg|max:250|min:100',
+            'profileImage' => 'required',
             'nokName' => 'required',
             'nokAddress' => 'required',
             'level' => 'required',
             'disability' => 'required',
+            'department' => 'required'
 
         ];
     }

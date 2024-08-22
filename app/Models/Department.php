@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -35,5 +36,15 @@ class Department extends Model
     public function faculty(): BelongsTo
     {
         return $this->belongsTo(Faculty::class, 'faculty_uuid', 'uuid');
+    }
+
+    /**
+     * Get the studentProfile associated with the Department
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function studentProfile(): HasOne
+    {
+        return $this->hasOne(StudentProfile::class, 'department_uuid', 'uuid');
     }
 }
