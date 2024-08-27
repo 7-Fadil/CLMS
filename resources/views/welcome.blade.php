@@ -104,7 +104,7 @@
                                 <span class="text-white-50 ms-1">Welcome to Federal University Of Kashere Gombe E-LIBRARY</span>
                             </div>
                             <h2 class="text-white fw-normal mb-4 mt-3 hero-title">
-                                Introducing the <strong>'Knowledge Hub'</strong> Library Management System at Federal University Kashere!
+                                Introducing the <strong>'Knowledge Hub'</strong> College Library Management System at Federal University Kashere!
                             </h2>
 
                             <p class="mb-4 font-16 text-white-50">

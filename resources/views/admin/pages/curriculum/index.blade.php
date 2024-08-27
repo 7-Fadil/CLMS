@@ -2,7 +2,7 @@
 @section('content')
     <!-- Center modal -->
     <button id="addCurriculum" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#centermodal">Add curriculum <i class="fas fa-plus"></i></button>
-    <a href="" class="btn btn-outline-info">Bulk upload <i class="fas fa-cloud"></i></a>
+    <a href="#" class="btn btn-outline-info">Bulk upload <i class="fas fa-cloud"></i></a>
     <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">

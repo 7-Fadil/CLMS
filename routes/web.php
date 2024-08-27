@@ -1,18 +1,20 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\BookOverDueController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\SearchCatalogController;
-use App\Http\Controllers\YearRegistrationController;
-
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BookOverDueController;
+use App\Http\Controllers\BorroweBookController;
+use App\Http\Controllers\SearchCatalogController;
 use App\Http\Controllers\StudentProfileController;
+
 use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\BookReservationController;
+use App\Http\Controllers\YearRegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,14 +124,27 @@ Route::prefix('fukashere/E-library/student')->group(function(){
     Route::controller(StudentProfileController::class)->middleware('student')->group(function(){
         Route::get('/profile', 'studentProfile')->name('student.profile');
         Route::post('/profile', 'storeStudentProfile')->name('save.studentProfile');
+        Route::get('/faculty_has_department/{facultyUuid}', 'getDepartment');
     });
 
     Route::controller(SearchCatalogController::class)->group(function(){
-        Route::get('/search/catalog', 'create')->middleware('isStudentProfileExist')->name('search.catalog');
+        Route::get('/search/catalog/', 'create')->middleware('isStudentProfileExist')->name('search.catalog');
     });
 
     Route::controller(BookOverDueController::class)->group(function(){
         Route::get('/book/overdue', 'create')->middleware('isStudentProfileExist')->name('book.overdue');
+    });
+
+    Route::controller(BorroweBookController::class)->group(function()
+    {
+        Route::get('/borrow/book', 'create')->middleware('isStudentProfileExist')->name('borrow.book');
+        Route::post('/borrow/book', 'store')->name('save.borrow');
+    });
+
+    Route::controller(BookReservationController::class)->group(function()
+    {
+        Route::get('/book/reservation', 'create')->middleware('isStudentProfileExist')->name('book.reservation');
+        Route::post('/book/reserve', 'store')->name('store.book.reservation');
     });
 });
 /**Student route ended */

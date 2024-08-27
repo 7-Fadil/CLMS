@@ -59,10 +59,13 @@
                         <select class="form-select @error('department')
                         is-invalid
                         @enderror" name="department" id="department">
-                            @foreach ($departments as $dapartment)
+                            {{-- @foreach ($departments as $dapartment)
                                 <option hidden>-- select faculty --</option>
                                 <option value="{{ $dapartment->uuid }}">{{ $dapartment->department_name }}</option>
-                            @endforeach
+                            @endforeach --}}
+                            <div id>
+
+                            </div>
                         </select>
                         @error('department')
                             <div class="text-danger">
@@ -272,7 +275,21 @@
             }
         });
         $('#test1').hide();
-    });
+
+      $('#faculty').change(function(){
+        var faculty_id = $(this).val();
+        $('#department').html('');
+        $.ajax({
+          url: 'faculty_has_department/'+ faculty_id,
+          method: 'GET',
+          success:function (res){
+          //  console.log(res);
+              $('#department').html(res);
+
+          }
+        });
+      });
+    })
 </script>
 
 @endsection

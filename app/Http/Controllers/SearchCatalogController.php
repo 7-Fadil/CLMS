@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookCategory;
+use App\Models\Books;
+use App\Models\BorrowBooks;
 use App\Models\SearchCatalog;
 use Illuminate\Http\Request;
 
@@ -18,9 +21,34 @@ class SearchCatalogController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('student.pages.searchCatalog.index');
+        $books = Books::with('books')
+                        ->get();
+
+        if($request->search_by)
+        {
+            if($request->search_by == "category")
+            {
+                $books = Books::with('books','borrowedBooks')->whereBooksCategoryUuid(BookCategory::whereBookCategoryName($request->search)
+                            ->first()
+                            ->uuid ?? Null)
+                            ->get();
+                            dd($books);
+            }
+            else
+            {
+            $books = Books::where($request->search_by, "like", "%".$request->search."%")
+                                    ->with('borrowedBooks')
+                                    ->get();
+            }
+        }
+
+        if ($books) {
+            return view('student.pages.searchCatalog.index', compact('books'));
+        }else {
+            return redirect()->back()->with('error', "Ooops! :(, Book not found/available");
+        }
     }
 
     /**

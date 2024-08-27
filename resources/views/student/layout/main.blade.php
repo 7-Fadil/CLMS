@@ -1,6 +1,5 @@
 <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <meta charset="utf-8">
         <title>{{ config('app.name') }}</title>
@@ -9,18 +8,23 @@
         <meta content="fadil" name="author">
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 
-        <!-- third party css -->
-        <link href="{{ asset('assets/css/vendor/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css">
-        {{-- font-awesome link --}}
-        <link rel="stylesheet" href="{{ asset('assets/fontawesome-free/css/all.min.css') }}">
-        <!-- third party css end -->
 
         <!-- App css -->
         <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style">
         <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style">
-
+        {{-- font-awesome link --}}
+        <link rel="stylesheet" href="{{ asset('assets/fontawesome-free/css/all.min.css') }}">
+        <!-- ico font -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/icofont/css/icofont.css') }}">
+        <!-- third party css -->
+        <link href="{{ asset('assets/css/vendor/dataTables.bootstrap5.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/vendor/responsive.bootstrap5.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/vendor/buttons.bootstrap5.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/vendor/select.bootstrap5.css') }}" rel="stylesheet" type="text/css">
+        <!-- third party css end -->
     </head>
 
     <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -61,7 +65,7 @@
 
                         {{-- borrowed book --}}
                         <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
+                            <a href="{{ route('borrow.book') }}" class="side-nav-link">
                                 <i class="uil-book uil-check"></i>
                                 <span>Borrowed Books</span>
                             </a>
@@ -77,7 +81,7 @@
 
                         {{-- book reservation --}}
                         <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
+                            <a href="{{ route('book.reservation') }}" class="side-nav-link">
                                 <i class="uil-book-alt uil-clock uil-plus"></i>
                                 <span>Book Reservation</span>
                             </a>
@@ -87,40 +91,65 @@
                         <li class="side-nav-item">
                             <a href="{{ route('search.catalog') }}" class="side-nav-link">
                                 <i class="uil-search"></i>
-                                <span>Search Catalog</span>
+                                <span>Search Books</span>
                             </a>
                         </li>
 
                         {{-- fines and fees --}}
                         <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
+                            <a href="#" class="side-nav-link">
                                 <i class="uil-money-bill"></i>
-                                <span>Fines and Fees</span>
+                                <span>Overdue charges</span>
                             </a>
                         </li>
 
                         {{-- Library announcement --}}
                         <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
+                            <a href="#" class="side-nav-link">
                                 <i class="uil-newspaper"></i>
                                 <span>Library Announcement</span>
                             </a>
                         </li>
 
                         {{-- Book renewal --}}
-                        <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
+                        {{-- <li class="side-nav-item">
+                            <a href="#" class="side-nav-link">
                                 <i class="uil-book-alt uil-sync"></i>
                                 <span>Book Renewal</span>
                             </a>
+                        </li> --}}
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#resources" aria-expanded="false" aria-controls="sidebarLayoutsa" class="side-nav-link">
+                                <i class="uil-book-alt uil-compass"></i>
+                                <span> Resources </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="resources">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="{{ route('profile') }}"><i class="fas fa-book"></i> Handout</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('profile') }}"><i class="uil-book-alt"></i> P&Q</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
 
-                        {{-- Resource guide --}}
                         <li class="side-nav-item">
-                            <a href="" class="side-nav-link">
-                                <i class="uil-book-alt uil-compass"></i>
-                                <span>Resource Guide</span>
+                            <a data-bs-toggle="collapse" href="#sidebarLayoutsa" aria-expanded="false" aria-controls="sidebarLayoutsa" class="side-nav-link">
+                                <i class="uil-cog"></i>
+                                <span> System Setting </span>
+                                <span class="menu-arrow"></span>
                             </a>
+                            <div class="collapse" id="sidebarLayoutsa">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="{{ route('profile') }}"><i class="fas fa-user-cog"></i> User Profile</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
 
                     </ul>
@@ -170,57 +199,6 @@
                                             </div>
                                             <p class="notify-details">Caleb Flakelar commented on Admin
                                                 <small class="text-muted">1 min ago</small>
-                                            </p>
-                                        </a>
-
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon bg-info">
-                                                <i class="mdi mdi-account-plus"></i>
-                                            </div>
-                                            <p class="notify-details">New user registered.
-                                                <small class="text-muted">5 hours ago</small>
-                                            </p>
-                                        </a>
-
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon">
-                                                <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                            <p class="notify-details">Cristina Pride</p>
-                                            <p class="text-muted mb-0 user-msg">
-                                                <small>Hi, How are you? What about our next meeting</small>
-                                            </p>
-                                        </a>
-
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon bg-primary">
-                                                <i class="mdi mdi-comment-account-outline"></i>
-                                            </div>
-                                            <p class="notify-details">Caleb Flakelar commented on Admin
-                                                <small class="text-muted">4 days ago</small>
-                                            </p>
-                                        </a>
-
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon">
-                                                <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                            <p class="notify-details">Karen Robinson</p>
-                                            <p class="text-muted mb-0 user-msg">
-                                                <small>Wow ! this admin looks good and awesome design</small>
-                                            </p>
-                                        </a>
-
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon bg-info">
-                                                <i class="mdi mdi-heart"></i>
-                                            </div>
-                                            <p class="notify-details">Carlos Crouch liked
-                                                <b>Admin</b>
-                                                <small class="text-muted">13 days ago</small>
                                             </p>
                                         </a>
                                     </div>
@@ -408,16 +386,38 @@
         <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
         <script src="{{ asset('assets/js/app.min.js') }}"></script>
 
-        <!-- third party js -->
-        <script src="assets/js/vendor/Chart.bundle.min.js"></script>
+        <!-- Apex js -->
         <script src="{{ asset('assets/js/vendor/apexcharts.min.js') }}"></script>
-        <script src="{{ asset('assets/js/vendor/jquery-jvectormap-1.2.2.min.js') }}"></script>
-        <script src="{{ asset('assets/js/vendor/jquery-jvectormap-world-mill-en.js') }}"></script>
-        <!-- third party js ends -->
+
+        <!-- Todo js -->
+        <script src="{{ asset('assets/js/ui/component.todo.js') }}"></script>
 
         <!-- demo app -->
-        <script src="{{ asset('assets/js/pages/demo.dashboard-analytics.js') }}"></script>
+        <script src="{{ asset('assets/js/pages/demo.dashboard-crm.js') }}"></script>
         <!-- end demo js-->
+        <!-- third party js -->
+        <script src="{{ asset('assets/js/vendor/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/dataTables.bootstrap5.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/responsive.bootstrap5.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/buttons.bootstrap5.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/buttons.html5.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/buttons.flash.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/buttons.print.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/dataTables.keyTable.min.js') }}"></script>
+        <script src="{{ asset('assets/js/vendor/dataTables.select.min.js') }}"></script>
+        <!-- third party js ends -->
+
+
+        <!-- demo app -->
+        <script src="{{ asset('assets/js/pages/demo.dashboard-projects.js') }}"></script>
+        <!-- end demo js-->
+
+        <!-- demo app -->
+        <script src="{{ asset('assets/js/pages/demo.datatable-init.js') }}"></script>
+        <!-- end demo js-->
+
     </body>
 
 </html>

@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('borrow_books', function (Blueprint $table) {
             $table->id();
             $table->string('uuid', 100)->unique();
-            $table->string('books_category_uuid');
-            $table->string('books_name', 100)->unique();
-            $table->string('isbn_number', 100)->unique();
-            $table->string('author');
-            $table->string('book_file');
-            $table->string('book_img', 250)->nullable();
-            $table->boolean('is_active')->default('1');
+            $table->string('book_id');
+            $table->string('student_id');
+            $table->string('borrow_date');
+            $table->string('due_date');
+            $table->enum('status', [1,0])->default(1);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('borrow_books');
     }
 };

@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BookOverDue;
-use App\Models\BorrowBooks;
-use Carbon\Carbon;
+use App\Models\Journal;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class BookOverDueController extends Controller
+class JournalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,10 +20,7 @@ class BookOverDueController extends Controller
      */
     public function create()
     {
-        $borrowedBooks = BorrowBooks::where('student_id', Auth::guard('student')->user()->uuid)
-                                    // ->whereDate('due_date',  now())
-                                    ->where('status', 1)->with('books')->get();
-        return view('student.pages.overdue.index', compact('borrowedBooks'));
+        //
     }
 
     /**
@@ -40,7 +34,7 @@ class BookOverDueController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(BookOverDue $bookOverDue)
+    public function show(Journal $journal)
     {
         //
     }
@@ -48,7 +42,7 @@ class BookOverDueController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BookOverDue $bookOverDue)
+    public function edit(Journal $journal)
     {
         //
     }
@@ -56,7 +50,7 @@ class BookOverDueController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, BookOverDue $bookOverDue)
+    public function update(Request $request, Journal $journal)
     {
         //
     }
@@ -64,7 +58,7 @@ class BookOverDueController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BookOverDue $bookOverDue)
+    public function destroy(Journal $journal)
     {
         //
     }

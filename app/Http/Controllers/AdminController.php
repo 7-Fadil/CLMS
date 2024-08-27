@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Faculty;
 use App\Models\Curriculum;
 use App\Models\Department;
+use App\Models\BorrowBooks;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\CourseOfStudy;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests\StoreCuriculumRequest;
 use App\Http\Requests\StoreCourseOfStudyRequest;
+use App\Models\Student;
 use App\Models\StudentProfile;
 use App\Models\YearRegistration;
 
@@ -20,7 +22,9 @@ class AdminController extends Controller
     /** Method for main dashboard */
     public function dashboard()
     {
-        return view('admin.pages.dashboard');
+        $issuedBooks = BorrowBooks::where('status', 1)->count();
+        $students = Student::count();
+        return view('admin.pages.dashboard', ['issuedBooksCount' => $issuedBooks, 'studentCount' => $students]);
     }//end method
     /** Method for login */
     public function loginForm()

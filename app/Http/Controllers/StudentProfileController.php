@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\StudentProfile;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreStudentProfile;
+use App\Models\FacultyHasDepartment;
 
 class StudentProfileController extends Controller
 {
@@ -50,4 +51,21 @@ class StudentProfileController extends Controller
             return to_route('student.profile')->with('success', 'Data insertion successfull');
         }
     }//end method
+
+    public function  getDepartment($facultyUuid)
+    {
+      // return "hello";
+    //   return $facultyUuid;
+        $departments = FacultyHasDepartment::where('faculty_uuid', $facultyUuid)
+                                            ->with('department')
+                                            ->get();
+        if($departments){
+            $facultyDepartment = '';
+            $facultyDepartment .= '<option value="" hidden>Select Department</option>';
+            foreach($departments as $department){
+                $facultyDepartment .=  "<option value='".$department->id."'>".$department->department->department_name."</option>";
+            }
+            return $facultyDepartment;
+        }
+    }
 }

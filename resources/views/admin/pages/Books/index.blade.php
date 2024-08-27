@@ -87,7 +87,7 @@
 <a href="" class="btn btn-outline-info">Bulk upload <i class="fas fa-cloud"></i></a>
 
 <div class="mt-3">
-    <table id="alternative-page-datatable" class="table dt-responsive nowrap w-100">
+    {{-- <table id="alternative-page-datatable" class="table dt-responsive nowrap w-100">
         <thead>
             <tr>
                 <th>s/n</th>
@@ -109,7 +109,7 @@
                         <td>{{ $book->author }}</td>
                         <td>
                             @if ($book->book_img !== null)
-                                <img src="{{ asset('public/bookImage/'.$book->book_img) }}" alt="Book Image">
+                                <img src="{{ asset($book->book_img) }}" alt="Book Image">
                             @else
                                 {{ 'Book image not available' }}
                             @endif
@@ -123,7 +123,25 @@
                     </tr>
                 @endforeach
         </tbody>
-    </table>
+    </table> --}}
+    <div class="row">
+        @foreach ($books as $sn => $book)
+            <div class="col-2">
+                <div class="card d-block">
+                    <!-- Avatar Medium -->
+                    <div class="avatar-lg">
+                        <span class="avatar-title bg-success rounded-circle center">
+                            <img class="img-fluid avatar-lg" src="{{ asset($book->book_img) }}" alt="Card image cap">
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $book->books_name }}</h5>
+                        <small class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur similique laboriosam eos autem delectus, earum perspiciatis eius ipsam temporibus adipisci soluta eaque nisi. Mollitia aliquid laboriosam dicta aliquam eaque earum?.</small>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </div>
 
 @if ($errors->any())
@@ -136,4 +154,4 @@
 @endif
 
 @endsection
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+

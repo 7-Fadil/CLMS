@@ -10,7 +10,7 @@
                 <div class="row align-items-center">
                     <div class="col-6">
                         <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Issued Book</h5>
-                        <h3 class="my-2 py-1">9,184</h3>
+                        <h3 class="my-2 py-1">{{  $issuedBooksCount  }}</h3>
                     </div>
                     <div class="col-6">
                         <div class="text-end">
@@ -28,7 +28,7 @@
                 <div class="row align-items-center">
                     <div class="col-6">
                         <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">Student</h5>
-                        <h3 class="my-2 py-1">3,254</h3>
+                        <h3 class="my-2 py-1">{{ $studentCount }}</h3>
                     </div>
                     <div class="col-6">
                         <div class="text-end">

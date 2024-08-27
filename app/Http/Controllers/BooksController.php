@@ -43,6 +43,9 @@ class BooksController extends Controller
             'authorName'=>'required',
             'bookImg'=>'max: 2058|mimes:png,jpg'
         ]);
+        $file = $request->file('bookImg');
+        $nameFile = $file->getClientOriginalName();
+        $file->move(public_path("public/bookImage"), $nameFile);
 
         $book = Books::create([
             'uuid' => str::orderedUuid(),
@@ -50,7 +53,7 @@ class BooksController extends Controller
             'books_name' => $request->bookName,
             'isbn_number' => $request->isbnNumber,
             'author' => $request->authorName,
-            'book_img' => $request->bookImg ? $request->bookImg->store('public/bookImage'):null
+            'book_img' => "public/bookImage/$nameFile"
         ]);
 
         if ($book) {
