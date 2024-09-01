@@ -1,5 +1,8 @@
 @extends('student.layout.main')
 @section('content')
+<div class="alert alert-secondary" role="alert">
+    <marquee behavior="slide" direction="left">If your book is overdue, you may incur a late fee. You can view and pay any outstanding fees through your library account or at the library help desk</marquee>
+</div>
 <div class="row">
     @foreach ($borrowedBooks as $borrowedBook)
     {{-- {{ $borrowedBook }} --}}

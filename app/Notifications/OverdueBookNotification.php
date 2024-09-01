@@ -28,22 +28,20 @@ class OverdueBookNotification extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['database'];
     }
 
     /**
      * Get the mail representation of the notification.
      */
-    public function toMail(object $notifiable): MailMessage
+    // Define the database notification structure
+    public function toDatabase($notifiable)
     {
-        return (new MailMessage)
-                    ->subject('Overdue Book Notice')
-                    ->line('Dear ' . $notifiable->name . ',')
-                    ->line('This is a reminder that the following book is overdue:')
-                    ->line('Book Title: ' . $this->borrowing->book->book->title)
-                    ->line('Due Date: ' . $this->borrowing->due_date)
-                    ->line('Please return the book as soon as possible.')
-                    ->line('Thank you for your prompt attention to this matter.');
+        return [
+            'message' => 'Your borrowed book "' . $this->borrowing->book->books_name . '" is overdue.',
+            'book_title' => $this->borrowing->book->author,
+            'due_date' => $this->borrowing->due_date,
+        ];
     }
 
     /**

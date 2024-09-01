@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use Carbon\Carbon;
 
+use App\Models\Student;
+use App\Models\BorrowBooks;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreStudent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\OverdueBookNotification;
 
 class StudentController extends Controller
 {
     public function dashboard()
     {
+        $user = Auth::guard('student')->user();
+        // $notifications = $user->notifications; // Fetch all notifications
+
         return view('student.pages.dashboard');
     }
     public function view()
@@ -63,6 +69,17 @@ class StudentController extends Controller
             return to_route('student.login')->with('success', 'Account successfully created');
         }else {
             return redirect()->back()->with('error', 'Something went wrong');
+        }
+    }
+
+    public function notifyOverdueBooks()
+    {
+        // Find all borrowings that are overdue
+        $overdueBorrowings = BorrowBooks::where('due_date', '<', Carbon::now())->get();
+
+        // Loop through each overdue borrowing and send a notification
+        foreach ($overdueBorrowings as $borrowing) {
+            $borrowing->user->notify(new OverdueBookNotification($borrowing));
         }
     }
 }
