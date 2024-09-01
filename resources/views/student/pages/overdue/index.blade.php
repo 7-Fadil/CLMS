@@ -15,9 +15,9 @@
                     <h5 class="card-title">{{ $borrowedBook->books_name }}</h5>
                     <small class="card-text">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>Title:</strong> {{ $borrowedBook->books->books_name }}</li>
-                            <li class="list-group-item"><strong>Author:</strong> {{ $borrowedBook->books->author }}</li>
-                            <li class="list-group-item"><strong>ISBN:</strong> {{ $borrowedBook->books->isbn_number }}</li>
+                            <li class="list-group-item"><strong>Title:</strong> {{ $borrowedBook->books->books_name ?? null }}</li>
+                            <li class="list-group-item"><strong>Author:</strong> {{ $borrowedBook->books->author ?? null }}</li>
+                            <li class="list-group-item"><strong>ISBN:</strong> {{ $borrowedBook->books->isbn_number ?? null }}</li>
                             <li class="list-group-item"><strong>Due date:</strong> {{ $borrowedBook->due_date }}</li>
                             <li class="list-group-item"><strong>Days overdue:</strong> {{ $borrowedBook->due_date }}</li>
                             <li class="list-group-item">

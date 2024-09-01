@@ -89,4 +89,9 @@ class BorroweBookController extends Controller
     {
         //
     }
+
+    public function borrowedBooks()
+    {
+        return view('admin.pages.Borrowing.index');
+    }
 }

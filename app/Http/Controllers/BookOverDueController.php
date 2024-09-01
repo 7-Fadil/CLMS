@@ -68,4 +68,9 @@ class BookOverDueController extends Controller
     {
         //
     }
+
+    public function booksOverdue()
+    {
+        return view('admin.pages.BooksOverDue.index');
+    }
 }

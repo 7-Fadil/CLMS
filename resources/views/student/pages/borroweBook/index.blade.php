@@ -55,18 +55,18 @@
                 {{-- {{ $borrowed->student->first_name }} --}}
                 <tr>
                     <td>{{ $sn+1 }}</td>
-                    <td>{{ $borrowed->books->books_name }}</td>
-                    <td>{{ $borrowed->books->isbn_number }}</td>
-                    <td>{{ $borrowed->books->author }}</td>
+                    <td>{{ $borrowed->books->books_name ?? null}}</td>
+                    <td>{{ $borrowed->books->isbn_number ?? null}}</td>
+                    <td>{{ $borrowed->books->author ?? null}}</td>
                     <td>
                         <!-- Avatar Medium -->
                         <div class="avatar-md">
                             <span class="avatar-title bg-secondary rounded-circle center">
-                                <img src="{{ url($borrowed->books->book_img) }}" class="img-fluid img-thumbnail rounded-circle" alt="book image">
+                                {{-- <img src="{{ url($borrowed->books->book_img) ?? null }}" class="img-fluid img-thumbnail rounded-circle" alt="book image"> --}}
                             </span>
                         </div>
                     </td>
-                    <td>{{ $borrowed->books->books->book_category_name }}</td>
+                    <td>{{ $borrowed->books->books->book_category_name ?? null}}</td>
                     <td>
                         <span class="badge bg-secondary text-light rounded-pill">Borrowed</span>
                     </td>

@@ -79,14 +79,18 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
 
         /** library card route */
         Route::get('/create/library/card', 'libraryCard')->name('library.card');
-    });
-    /* Main route ended */
 
-    Route::controller(UserManagementController::class)->middleware('admin')->group(function(){
-        /** User management route started */
-        Route::get('/user/management', 'index')->name('user-management');
-        /** User management route ended */
-    });
+        Route::controller(BookOverDueController::class)->group(function()
+        {
+            Route::get('/book/overdue/', 'booksOverdue')->name('books.overDue');
+        });
+
+        Route::controller(BorroweBookController::class)->group(function()
+        {
+            Route::get('/borrowing/books', 'borrowedBooks')->name('borrowing.books');
+        });
+        /* Main route ended */
+});
 
     /**Book main route */
     Route::controller(BooksController::class)->middleware('admin')->group(function(){

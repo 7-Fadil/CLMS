@@ -64,9 +64,16 @@
 
                         {{-- borrowed book --}}
                         <li class="side-nav-item">
-                            <a href="#" class="side-nav-link">
+                            <a href="{{ route('borrowing.books') }}" class="side-nav-link">
                                 <i class="uil-book uil-check"></i>
                                 <span>Borrowed Books</span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="{{ route('books.overDue') }}" class="side-nav-link">
+                                <i class="uil-book-alt uil-exclamation-octagon"></i>
+                                <span>Overdue Books </span>
                             </a>
                         </li>
 
@@ -115,7 +122,7 @@
                             <div class="collapse" id="accessControl">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="{{ route('user-management') }}"><i class="fas fa-user-lock"></i> User management(Admin)</a>
+                                        <a href="#"><i class="fas fa-user-lock"></i> User management(Admin)</a>
                                     </li>
                                     <li>
                                         <a href="#"><i class="fas fa-user-cog"></i> User signature</a>
