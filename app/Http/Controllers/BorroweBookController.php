@@ -37,22 +37,27 @@ class BorroweBookController extends Controller
      */
     public function store(Request $request)
     {
-        $book = Books::where('books_name', $request->input('book_title'))->first();
-        $student = Auth::guard('student')->user();
+        $this->validate($request, [
+            'book_title' => 'required',
+            'studentId' => 'required|unique:borrow_books,student_id|exists:students,matric_number'
+        ]);
 
+        $book = Books::where('books_name', $request->input('book_title'))->first();
+
+        $dueAt = Carbon::parse($request->input('borrowed_date'))->addDays(14);
         if ($book->isAvailable()) {
             $borrowing = new BorrowBooks();
             $borrowing -> uuid = Str::orderedUuid();
             $borrowing -> book_id = $book->uuid;
-            $borrowing -> student_id = $student->uuid;
+            $borrowing -> student_id = $request->studentId;
             $borrowing -> borrow_date = Carbon::now();
-            $borrowing -> due_date = Carbon::now()->addDay(14);
+            $borrowing -> due_date = $dueAt;
             $borrowing->save();
 
             $book -> is_active == '0';
             $book -> save();
 
-            return redirect()->back()->with('success', 'Book borrowed successfyll');
+            return redirect()->back()->with('success', 'Book borrowed successfully. Due in 14 days.');
         }else {
             return redirect()->back()->with('error', 'Book is not available');
         }
@@ -92,6 +97,10 @@ class BorroweBookController extends Controller
 
     public function borrowedBooks()
     {
-        return view('admin.pages.Borrowing.index');
+        $books = Books::where('is_active', 1)
+                        ->get();
+
+    $borrowedBooks = BorrowBooks::all();
+        return view('admin.pages.Borrowing.index', compact('books', 'borrowedBooks'));
     }
 }

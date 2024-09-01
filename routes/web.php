@@ -88,6 +88,7 @@ Route::prefix('fukashere/E-library/admin')->group(function() {
         Route::controller(BorroweBookController::class)->group(function()
         {
             Route::get('/borrowing/books', 'borrowedBooks')->name('borrowing.books');
+            Route::post('/borrowe/book', 'store')->name('borrowe.book');
         });
         /* Main route ended */
 });

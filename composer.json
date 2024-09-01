@@ -16,6 +16,7 @@
         "php-flasher/flasher-laravel": "^1.15",
         "simplesoftwareio/simple-qrcode": "^4.2",
         "spatie/laravel-permission": "^6.9",
+        "twilio/sdk": "^8.2",
         "yoeunes/toastr": "^2.3"
     },
     "require-dev": {
