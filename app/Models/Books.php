@@ -18,6 +18,7 @@ class Books extends Model
         'isbn_number',
         'author',
         'book_img',
+        'book_pdf',
         'is_active'
     ];
 

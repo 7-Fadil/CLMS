@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BookCategory;
 use App\Models\Books;
 use App\Models\BorrowBooks;
-use App\Models\SearchCatalog;
+use App\Models\BookCategory;
 use Illuminate\Http\Request;
+use App\Models\SearchCatalog;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class SearchCatalogController extends Controller
 {
@@ -49,6 +51,21 @@ class SearchCatalogController extends Controller
         }else {
             return redirect()->back()->with('error', "Ooops! :(, Book not found/available");
         }
+    }
+
+    public function download($id)
+    {
+        $bookFile = Books::findOrFail($id);
+        return response()->download(storage_path("app/public/{$bookFile->book_pdf}"));
+        // // Define the full path to the file
+        // $pathToFile = storage_path('public/' . $bookFile->book_pdf);
+
+        // if(!file_exists($pathToFile))
+        // {
+        //     return response()->json(['error' => 'File not found.'], Response::HTTP_NOT_FOUND);
+        // }
+
+        // return response()->download($pathToFile, $bookFile->books_name);
     }
 
     /**

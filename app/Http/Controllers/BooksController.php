@@ -41,11 +41,24 @@ class BooksController extends Controller
             'bookName'=>'required',
             'isbnNumber'=>'required|alpha_num|unique:books,isbn_number|min:11',
             'authorName'=>'required',
+            'bookPdf'=>'nullable|file|mimes:pdf|max:2048',
             'bookImg'=>'max: 2058|mimes:png,jpg'
         ]);
         $file = $request->file('bookImg');
         $nameFile = $file->getClientOriginalName();
-        $file->move(public_path("public/bookImage"), $nameFile);
+        $file->move(public_path("bookImage/"), $nameFile);
+
+        if ($request->hasFile('bookPdf'))
+        {
+            $file = $request->file('bookPdf');
+            $filePath = $file->store('books', 'public');
+        }else
+        {
+            $filePath = null;
+        }
+        // $bookPdf = $request->file('bookPdf');
+        // $master = $bookPdf->getClientOriginalName();
+        // $bookPdf->move(public_path("bookPdf/"), $master);
 
         $book = Books::create([
             'uuid' => str::orderedUuid(),
@@ -53,11 +66,12 @@ class BooksController extends Controller
             'books_name' => $request->bookName,
             'isbn_number' => $request->isbnNumber,
             'author' => $request->authorName,
-            'book_img' => "public/bookImage/$nameFile"
+            'book_pdf' => $filePath,
+            'book_img' => "bookImage/$nameFile"
         ]);
 
         if ($book) {
-            return to_route('create.book')->with('success', 'Data insertion successfull');
+            return to_route('create.book')->with('success', 'Book added successfull');
         }else {
             return redirect()->back()->with('error', 'A problem arose');
         }

@@ -52,7 +52,7 @@
                                         <li class="list-group-item">
                                             <small>
                                                 @if ($book ->is_active == 1)
-                                                    <a href="#" class="btn btn-outline-secondary" @disabled(true)>Download <i class="fas fa-download"></i></a>
+                                                    <a href="{{ route('download.book', $book->id) }}" class="btn btn-outline-secondary" @disabled(true)>Download <i class="fas fa-download"></i></a>
                                                 @endif
                                             </small>
                                         </li>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('books_name', 100)->unique();
             $table->string('isbn_number', 100)->unique();
             $table->string('author');
-            $table->string('book_file');
+            $table->string('book_pdf');
             $table->string('book_img', 250)->nullable();
             $table->boolean('is_active')->default('1');
             $table->timestamps();

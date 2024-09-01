@@ -129,6 +129,7 @@ Route::prefix('fukashere/E-library/student')->group(function(){
 
     Route::controller(SearchCatalogController::class)->group(function(){
         Route::get('/search/catalog/', 'create')->middleware('isStudentProfileExist')->name('search.catalog');
+        Route::get('/book/download/{id}', 'download')->middleware('isStudentProfileExist')->name('download.book');
     });
 
     Route::controller(BookOverDueController::class)->group(function(){
